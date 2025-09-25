@@ -1,0 +1,2415 @@
+[
+  {
+    "#debug": {
+      "requestId": "fuRIlrU6qeXPE3b",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin+%28%22stealth+mode%22+OR+%22stealth+startup%22+OR+%22in+stealth%22%29+%28Italy+OR+Italia+OR+Milano+OR+Roma+OR+Torino+OR+Firenze+OR+Bologna%29",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin+%28%22stealth+mode%22+OR+%22stealth+startup%22+OR+%22in+stealth%22%29+%28Italy+OR+Italia+OR+Milano+OR+Roma+OR+Torino+OR+Firenze+OR+Bologna%29",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin+%28%22stealth+mode%22+OR+%22stealth+startup%22+OR+%22in+stealth%22%29+%28Italy+OR+Italia+OR+Milano+OR+Roma+OR+Torino+OR+Firenze+OR+Bologna%29",
+      "device": "DESKTOP",
+      "page": 1,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin+%28%22stealth+mode%22+OR+%22stealth+startup%22+OR+%22in+stealth%22%29+%28Italy+OR+Italia+OR+Milano+OR+Roma+OR+Torino+OR+Firenze+OR+Bologna%29",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Michele Bolognesi - Co-Founder & CEO - Stealth Startup",
+        "url": "https://www.linkedin.com/in/michelebolognesi",
+        "displayedUrl": "LinkedIn › Michele Bolognesi",
+        "description": "Experience ; Co-Founder & CEO. Stealth Startup. 2025 ; Technology Investment Banking. Goldman Sachs. Mar 2024 ; Global Industrials Investment Banking. Deutsche ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "United States",
+          "jobTitle": "Co-Founder & CEO",
+          "companyName": "Stealth Startup",
+          "rawText": "United States · Co-Founder & CEO · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2560 follower",
+        "type": "organic",
+        "position": 1
+      },
+      {
+        "title": "Riccardo Morotti - co-founder @stealth startup",
+        "url": "https://it.linkedin.com/in/riccardomorotti",
+        "displayedUrl": "LinkedIn › Riccardo Morotti",
+        "description": "co-founder @stealth startup · Esperienza: Stealth · Formazione: Alma Mater Studiorum - Università di Bologna · Località: Torino · Più di 500 collegamenti su ...",
+        "emphasizedKeywords": [
+          "stealth startup",
+          "Bologna",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Torino, Piemonte, Italia",
+          "jobTitle": "Co-Founder",
+          "companyName": "Stealth",
+          "rawText": "Torino, Piemonte, Italia · Co-Founder · Stealth"
+        },
+        "followersAmount": "Oltre 1870 follower",
+        "type": "organic",
+        "position": 2
+      },
+      {
+        "title": "Gianluca Ruggiero - Stealth Startup",
+        "url": "https://www.linkedin.com/in/ruggierogianluca",
+        "displayedUrl": "LinkedIn › Gianluca Ruggiero",
+        "description": "Global Marketing Strategist • AI-Powered Brand… · Experience: Stealth Startup · Education: Università degli Studi di Napoli 'Federico II' · Location: ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Westport, Connecticut, United States",
+          "companyName": "Stealth Startup",
+          "rawText": "Westport, Connecticut, United States · Stealth Startup"
+        },
+        "followersAmount": "Oltre 7680 follower",
+        "type": "organic",
+        "position": 3
+      },
+      {
+        "title": "Andrea Di Lelio - Stealth Mode Startup Company",
+        "url": "https://it.linkedin.com/in/andreadilelio",
+        "displayedUrl": "LinkedIn › Andrea Di Lelio",
+        "description": "Esperienza: Stealth Mode Startup Company · Formazione: Istituto Europeo di Design · Località: Meda · Più di 500 collegamenti su LinkedIn.",
+        "emphasizedKeywords": [
+          "Stealth Mode"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Meda, Lombardia, Italia",
+          "companyName": "Stealth Mode Startup Company",
+          "rawText": "Meda, Lombardia, Italia · Stealth Mode Startup Company"
+        },
+        "followersAmount": "Oltre 1170 follower",
+        "type": "organic",
+        "position": 4
+      },
+      {
+        "title": "Roberto Stagi - Stealth Startup",
+        "url": "https://it.linkedin.com/in/rstagi/en",
+        "displayedUrl": "LinkedIn › Roberto Stagi",
+        "description": "Building something new. · Experience: Stealth Startup · Education: Politecnico di Torino · Location: Italy · 500+ connections on LinkedIn.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Torino",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italy",
+          "companyName": "Stealth Startup",
+          "rawText": "Italy · Stealth Startup"
+        },
+        "followersAmount": "Oltre 5840 follower",
+        "type": "organic",
+        "position": 5
+      },
+      {
+        "title": "Tobia De Angelis - Stealth Startup",
+        "url": "https://it.linkedin.com/in/tobiadeangelis",
+        "displayedUrl": "LinkedIn › Tobia De Angelis",
+        "description": "Entrepreneur. · Esperienza: Stealth Startup · Località: Milano · Più di 500 collegamenti su LinkedIn. Vedi il profilo di Tobia De Angelis su LinkedIn, ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano · Stealth Startup"
+        },
+        "followersAmount": "Oltre 6570 follower",
+        "type": "organic",
+        "position": 6
+      },
+      {
+        "title": "Hannabeth Lagerlöf - CEO of Stealth Startup",
+        "url": "https://www.linkedin.com/in/hannabethlagerlof",
+        "displayedUrl": "LinkedIn › Hannabeth Lagerlöf",
+        "description": "Experience ; Chief Executive Officer. Stealth Startup. Jan 2024 ; Environments Designer. BANGMAC CREATIVE. Jan 2018 ; Visual Designer. Emanate Design. Nov 2013 ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Brooklyn, New York, United States",
+          "jobTitle": "Chief Executive Officer",
+          "companyName": "Stealth Startup",
+          "rawText": "Brooklyn, New York, United States · Chief Executive Officer · Stealth Startup"
+        },
+        "followersAmount": "Oltre 530 follower",
+        "type": "organic",
+        "position": 7
+      },
+      {
+        "title": "Alberto Amadio - Stealth Startup",
+        "url": "https://it.linkedin.com/in/amadioalberto",
+        "displayedUrl": "LinkedIn › Alberto Amadio",
+        "description": "Esperienza: Stealth Startup · Formazione: Università Commerciale 'Luigi Bocconi' · Località: Milano · Più di 500 collegamenti su LinkedIn.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2250 follower",
+        "type": "organic",
+        "position": 8
+      },
+      {
+        "title": "Eleonora Mantovani - Stealth Startup",
+        "url": "https://uk.linkedin.com/in/eleonoramantovani",
+        "displayedUrl": "LinkedIn › Eleonora Mantovani",
+        "description": "Always in the wrong place at the right time. · Experience: Stealth Startup · Education: Università di Bologna · Location: London · 500+ connections on ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Bologna"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "London, England, United Kingdom",
+          "companyName": "Stealth Startup",
+          "rawText": "London, England, United Kingdom · Stealth Startup"
+        },
+        "followersAmount": "Oltre 3740 follower",
+        "type": "organic",
+        "position": 9
+      },
+      {
+        "title": "Alice Milano - Stealth Startup",
+        "url": "https://de.linkedin.com/in/alice-milano-750b7420a/en",
+        "displayedUrl": "LinkedIn › Alice Milano",
+        "description": "Alice Milano. Stealth Startup Hochschule Furtwangen University. Berlin, Berlin, Germany. 3K followers 500+ connections. See your mutual connections ...",
+        "emphasizedKeywords": [
+          "Milano",
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Berlin, Berlin, Germany",
+          "companyName": "Stealth Startup",
+          "rawText": "Berlin, Berlin, Germany · Stealth Startup"
+        },
+        "followersAmount": "Oltre 3320 follower",
+        "type": "organic",
+        "position": 10
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/fuRIlrU6qeXPE3b-0.html?signature=zTQiIeRkP4YIPV4LPOg2"
+  },
+  {
+    "#debug": {
+      "requestId": "6y3BXZmQH8irgV0",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=10",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=10",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=10",
+      "device": "DESKTOP",
+      "page": 2,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=10",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Gianmaria Monteleone - Stealth Startup",
+        "url": "https://it.linkedin.com/in/gianmaria-monteleone/it",
+        "displayedUrl": "LinkedIn › Gianmaria Monteleone",
+        "description": "· Esperienza: Stealth Startup · Formazione: Università Bocconi · Località: Italia ... MIlano, Italia. Formazione. Grafico Università Bocconi. Università ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Italia",
+          "MIlano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 4340 follower",
+        "type": "organic",
+        "position": 11
+      },
+      {
+        "title": "Ervis Jace - Stealth Startup",
+        "url": "https://it.linkedin.com/in/ervisjace",
+        "displayedUrl": "LinkedIn › Ervis Jace",
+        "description": "Tech leader with 20+ years of experience building cloud-native, scalable, and secure… · Esperienza: Stealth Startup · Località: Italia · Più di 500 ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2230 follower",
+        "type": "organic",
+        "position": 12
+      },
+      {
+        "title": "Antonio Palma - Stealth Startup",
+        "url": "https://www.linkedin.com/in/antonio-palma",
+        "displayedUrl": "LinkedIn › Antonio Palma",
+        "description": "Let's connect, share ideas, and co-create the decentralised world of tomorrow today. · Experience: Stealth Startup · Education: Politecnico di Milano ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "San Francisco Bay Area",
+          "companyName": "Stealth Startup",
+          "rawText": "San Francisco Bay Area · Stealth Startup"
+        },
+        "followersAmount": "Oltre 3800 follower",
+        "type": "organic",
+        "position": 13
+      },
+      {
+        "title": "Alessandro Ruffini - Stealth Startup",
+        "url": "https://it.linkedin.com/in/aruffini",
+        "displayedUrl": "LinkedIn › Alessandro Ruffini",
+        "description": "+15 years of… · Esperienza: Stealth Startup · Formazione: SDA Bocconi · Località: Italia ... Milano, Italia. -. Milan Area, Italy. -. Milan. Formazione. Grafico ...",
+        "date": "2040-09-25T09:27:23.795Z",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Italia",
+          "Milano",
+          "Italia",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1160 follower",
+        "type": "organic",
+        "position": 14
+      },
+      {
+        "title": "Giovanni Cavallo - Stealth Startup",
+        "url": "https://uk.linkedin.com/in/gcavallo/en",
+        "displayedUrl": "LinkedIn › Giovanni Cavallo",
+        "description": "Serial entrepreneur, exited founder, and executive with 14+ years spearheading growth… · Experience: Stealth Startup · Location: London · 500+ connections ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "London, England, United Kingdom",
+          "companyName": "Stealth Startup",
+          "rawText": "London, England, United Kingdom · Stealth Startup"
+        },
+        "followersAmount": "Oltre 9760 follower",
+        "type": "organic",
+        "position": 15
+      },
+      {
+        "title": "Marco Foschiano - Stealth Mode Startup -- eHealth",
+        "url": "https://www.linkedin.com/in/mfoschiano/",
+        "displayedUrl": "LinkedIn › Marco Foschiano",
+        "description": "Marco Foschiano. Stealth Mode Startup -- eHealth Politecnico di Torino. Stabio, Ticino, Switzerland. 2K followers ...",
+        "emphasizedKeywords": [
+          "Stealth Mode",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Stabio, Ticino, Switzerland",
+          "companyName": "Stealth Mode Startup -- eHealth",
+          "rawText": "Stabio, Ticino, Switzerland · Stealth Mode Startup -- eHealth"
+        },
+        "followersAmount": "Oltre 1660 follower",
+        "type": "organic",
+        "position": 16
+      },
+      {
+        "title": "Ciro Di Lanno - Stealth Startup",
+        "url": "https://it.linkedin.com/in/ciro-di-lanno",
+        "displayedUrl": "LinkedIn › Ciro Di Lanno",
+        "description": "Ciro Di Lanno. Stealth Startup Stanford University Graduate School of Business. Milano, Lombardia, Italia. 6286 follower Oltre 500 collegamenti. Vedi i ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 6280 follower",
+        "type": "organic",
+        "position": 17
+      },
+      {
+        "title": "Giacomo Nicoli - Stealth Startup",
+        "url": "https://it.linkedin.com/in/giacomo-nicoli",
+        "displayedUrl": "LinkedIn › Giacomo Nicoli",
+        "description": "Working on something new in MedTech · Esperienza: Stealth Startup · Formazione: CEMS - The Global Alliance in Management Education · Località: Italia ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 4670 follower",
+        "type": "organic",
+        "position": 18
+      },
+      {
+        "title": "Marco Actis - Stealth Startup",
+        "url": "https://it.linkedin.com/in/marco-actis-14b7b0a1",
+        "displayedUrl": "LinkedIn › Marco Actis",
+        "description": "Esperienza: Stealth Startup · Formazione: Università degli Studi di Torino · Località: Torino · Più di 500 collegamenti su LinkedIn. Vedi il profilo di ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Torino",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Torino, Piemonte, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Torino, Piemonte, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2140 follower",
+        "type": "organic",
+        "position": 19
+      },
+      {
+        "title": "Fabrizio Zanetti - CEO & Founder, Stealth Mode",
+        "url": "https://it.linkedin.com/in/fabrizio-zanetti-b545181a7",
+        "displayedUrl": "LinkedIn › Fabrizio Zanetti",
+        "description": "CEO & Founder, Stealth Mode | Unconventional Offline Marketing. Stealth Università degli Studi di Pavia. Milano, Lombardia, Italia. 970 follower Oltre 500 ...",
+        "emphasizedKeywords": [
+          "Stealth Mode",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "CEO & Founder",
+          "companyName": "Stealth",
+          "rawText": "Milano, Lombardia, Italia · CEO & Founder · Stealth"
+        },
+        "followersAmount": "Oltre 970 follower",
+        "type": "organic",
+        "position": 20
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/6y3BXZmQH8irgV0-0.html?signature=XxSTKCMBiFBWCYWojvZ4"
+  },
+  {
+    "#debug": {
+      "requestId": "txLPQP85RvBSWJF",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=20",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=20",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=20",
+      "device": "DESKTOP",
+      "page": 3,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=20",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Enrico Tartarotti - Stealth Startup",
+        "url": "https://it.linkedin.com/in/enricotartarotti",
+        "displayedUrl": "LinkedIn › Enrico Tartarotti",
+        "description": "Enrico Tartarotti. Stealth Startup Politecnico di Milano. Italia. 2820 follower Oltre 500 collegamenti.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2830 follower",
+        "type": "organic",
+        "position": 21
+      },
+      {
+        "title": "Mattia Zarrelli - Stealth Startup",
+        "url": "https://it.linkedin.com/in/mattia-zarrelli-658b0317b",
+        "displayedUrl": "LinkedIn › Mattia Zarrelli",
+        "description": "Co-founder & CTO @Parc, a startup pushing for a net zero future. Background in… · Esperienza: Stealth Startup · Formazione: Politecnico di Torino ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Nichelino, Piemonte, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Nichelino, Piemonte, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 880 follower",
+        "type": "organic",
+        "position": 22
+      },
+      {
+        "title": "Ciro Di Lanno - Stealth Startup",
+        "url": "https://it.linkedin.com/in/ciro-di-lanno",
+        "displayedUrl": "LinkedIn › Ciro Di Lanno",
+        "description": "Ciro Di Lanno. Stealth Startup Stanford University Graduate School of Business. Milano, Lombardia, Italia. 6286 follower Oltre 500 collegamenti. Vedi i ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 6280 follower",
+        "type": "organic",
+        "position": 23
+      },
+      {
+        "title": "Eraldo Çuli - Stealth Startup",
+        "url": "https://it.linkedin.com/in/eraldoc",
+        "displayedUrl": "LinkedIn › Eraldo Çuli",
+        "description": "Eraldo Çuli. Stealth Startup Università degli Studi di Torino. Bologna, Emilia Romagna, Italia. 641 follower Oltre 500 collegamenti. Vedi i collegamenti in ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Torino",
+          "Bologna",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Bologna, Emilia Romagna, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Bologna, Emilia Romagna, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 640 follower",
+        "type": "organic",
+        "position": 24
+      },
+      {
+        "title": "Fabrizio Zanetti - CEO & Founder, Stealth Mode",
+        "url": "https://it.linkedin.com/in/fabrizio-zanetti-b545181a7",
+        "displayedUrl": "LinkedIn › Fabrizio Zanetti",
+        "description": "CEO & Founder, Stealth Mode | Unconventional Offline Marketing · Sviluppo soluzioni creative nell'unconventional marketing da più di 10 anni, con una grande ...",
+        "emphasizedKeywords": [
+          "Stealth Mode"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "CEO & Founder",
+          "companyName": "Stealth",
+          "rawText": "Milano, Lombardia, Italia · CEO & Founder · Stealth"
+        },
+        "followersAmount": "Oltre 970 follower",
+        "type": "organic",
+        "position": 25
+      },
+      {
+        "title": "Roberto Stagi - Stealth Startup",
+        "url": "https://it.linkedin.com/in/rstagi",
+        "displayedUrl": "LinkedIn › Roberto Stagi",
+        "description": "Building something new. · Esperienza: Stealth Startup · Formazione: Politecnico di Torino · Località: Italia · Più di 500 collegamenti su LinkedIn.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Torino",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 5840 follower",
+        "type": "organic",
+        "position": 26
+      },
+      {
+        "title": "Mattia Landolfi - Stealth Startup",
+        "url": "https://uk.linkedin.com/in/mattialandolfi",
+        "displayedUrl": "LinkedIn › Mattia Landolfi",
+        "description": "Technical expertise - Engineering background and Robotics Researcher experience… · Experience: Stealth Startup · Education: Politecnico di Torino ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Cracow, Małopolskie, Poland",
+          "companyName": "Stealth Startup",
+          "rawText": "Cracow, Małopolskie, Poland · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1100 follower",
+        "type": "organic",
+        "position": 27
+      },
+      {
+        "title": "Bianca Panchetti - Stealth Mode",
+        "url": "https://ch.linkedin.com/in/biancapanchetti/it",
+        "displayedUrl": "LinkedIn › Bianca Panchetti",
+        "description": "Bianca Panchetti. Stealth Mode. Treeless Alma Mater Studiorum – Università di Bologna. Svizzera. 2153 follower Oltre 500 collegamenti. Vedi i collegamenti in ...",
+        "emphasizedKeywords": [
+          "Stealth Mode",
+          "Bologna"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "followersAmount": "Oltre 2150 follower",
+        "type": "organic",
+        "position": 28
+      },
+      {
+        "title": "Edoardo Caovilla - Stealth Mode",
+        "url": "https://it.linkedin.com/in/edoardo-caovilla-62700430",
+        "displayedUrl": "LinkedIn › Edoardo Caovilla",
+        "description": "Edoardo Caovilla. Stealth Mode Alma Mater Studiorum - Università di Bologna. Milano, Lombardia, Italia. 7479 follower Oltre 500 collegamenti. Vedi i ...",
+        "emphasizedKeywords": [
+          "Stealth Mode",
+          "Bologna",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Mode",
+          "rawText": "Milano, Lombardia, Italia · Stealth Mode"
+        },
+        "followersAmount": "Oltre 7470 follower",
+        "type": "organic",
+        "position": 29
+      },
+      {
+        "title": "Andrea Zorzetto - Stealth Startup",
+        "url": "https://it.linkedin.com/in/andreazorzetto",
+        "displayedUrl": "LinkedIn › Andrea Zorzetto",
+        "description": "Andrea Zorzetto. Stealth Startup Hertie School. Milano, Lombardia, Italia. 9481 follower Oltre 500 collegamenti. Vedi i collegamenti in comune. Visualizza i ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 9470 follower",
+        "type": "organic",
+        "position": 30
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/txLPQP85RvBSWJF-0.html?signature=16GuSbhRWdRRSOhXFGDZ2"
+  },
+  {
+    "#debug": {
+      "requestId": "FjBAHqhUADydf39",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=30",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=30",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=30",
+      "device": "DESKTOP",
+      "page": 4,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=30",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Davide Bonetti - Stealth Startup",
+        "url": "https://es.linkedin.com/in/davide-bonetti-43162152",
+        "displayedUrl": "LinkedIn › Davide Bonetti",
+        "description": "Aerospace expert, technical leader, business developer, strategy planner. CEO, CTO… · Experiencia: Stealth Startup · Educación: Politecnico di Milano ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Madrid y alrededores",
+          "companyName": "Stealth Startup",
+          "rawText": "Madrid y alrededores · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2200 follower",
+        "type": "organic",
+        "position": 31
+      },
+      {
+        "title": "Mattia Bolognesi - Stealth Startup",
+        "url": "https://es.linkedin.com/in/mattia-bolognesi",
+        "displayedUrl": "LinkedIn › Mattia Bolognesi",
+        "description": "Data-driven and results-oriented Data Scientist with many years of experience in start… · Experiencia: Stealth Startup · Educación: Universitat Pompeu Fabra ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "España",
+          "companyName": "Stealth Startup",
+          "rawText": "España · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1530 follower",
+        "type": "organic",
+        "position": 32
+      },
+      {
+        "title": "Simone Calderoni - Stealth Startup",
+        "url": "https://it.linkedin.com/in/simone-calderoni",
+        "displayedUrl": "LinkedIn › Simone Calderoni",
+        "description": "Esperto in sviluppo aziendale, start-up, marketing digitale, pubblicità e vendite. · Esperienza: Stealth Startup · Formazione: Università degli Studi di ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1580 follower",
+        "type": "organic",
+        "position": 33
+      },
+      {
+        "title": "Eraldo Çuli - Stealth Startup",
+        "url": "https://it.linkedin.com/in/eraldoc",
+        "displayedUrl": "LinkedIn › Eraldo Çuli",
+        "description": "Eraldo Çuli. Stealth Startup Università degli Studi di Torino. Bologna, Emilia Romagna, Italia. 641 follower Oltre 500 collegamenti. Vedi i collegamenti in ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Torino",
+          "Bologna",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Bologna, Emilia Romagna, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Bologna, Emilia Romagna, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 640 follower",
+        "type": "organic",
+        "position": 34
+      },
+      {
+        "title": "Lorenzo Abati - Co-Founder @stealth startup | ex-CERN",
+        "url": "https://it.linkedin.com/in/lorenzo-abati",
+        "displayedUrl": "LinkedIn › Lorenzo Abati",
+        "description": "Co-Founder @stealth startup | ex-CERN · Busy building · Esperienza: Stealth Startup · Formazione: MIT Professional Education · Località: Torino · Più di 500 ...",
+        "emphasizedKeywords": [
+          "stealth startup",
+          "Stealth Startup",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Torino, Piemonte, Italia",
+          "jobTitle": "Co-Founder",
+          "companyName": "Stealth Startup",
+          "rawText": "Torino, Piemonte, Italia · Co-Founder · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1760 follower",
+        "type": "organic",
+        "position": 35
+      },
+      {
+        "title": "Marco Cello - Stealth Startup",
+        "url": "https://it.linkedin.com/in/marcocello",
+        "displayedUrl": "LinkedIn › Marco Cello",
+        "description": "Marco Cello. Stealth Startup Università degli Studi di Genova. Genova. 2807 follower Oltre 500 collegamenti.",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Genova",
+          "companyName": "Stealth Startup",
+          "rawText": "Genova · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2810 follower",
+        "type": "organic",
+        "position": 36
+      },
+      {
+        "title": "Alberto Amadio - Stealth Startup",
+        "url": "https://it.linkedin.com/in/amadioalberto",
+        "displayedUrl": "LinkedIn › Alberto Amadio",
+        "description": "Esperienza: Stealth Startup · Formazione: Università Commerciale 'Luigi Bocconi' · Località: Milano · Più di 500 collegamenti su LinkedIn.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2250 follower",
+        "type": "organic",
+        "position": 37
+      },
+      {
+        "title": "Riccardo Morotti - co-founder @stealth startup",
+        "url": "https://it.linkedin.com/in/riccardomorotti",
+        "displayedUrl": "LinkedIn › Riccardo Morotti",
+        "description": "co-founder @stealth startup · Esperienza: Stealth · Formazione: Alma Mater Studiorum - Università di Bologna · Località: Torino · Più di 500 collegamenti su ...",
+        "emphasizedKeywords": [
+          "stealth startup",
+          "Bologna",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Torino, Piemonte, Italia",
+          "jobTitle": "Co-Founder",
+          "companyName": "Stealth",
+          "rawText": "Torino, Piemonte, Italia · Co-Founder · Stealth"
+        },
+        "followersAmount": "Oltre 1870 follower",
+        "type": "organic",
+        "position": 38
+      },
+      {
+        "title": "️ Tal Melamed - Stealth Startup",
+        "url": "https://it.linkedin.com/in/talmelamed",
+        "displayedUrl": "LinkedIn › 🛡️ Tal Melamed",
+        "description": "I focus on turning bold ideas into impactful products, working at the intersection of… · Esperienza: Stealth Startup · Formazione: Quinnipiac University ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 8670 follower",
+        "type": "organic",
+        "position": 39
+      },
+      {
+        "title": "Gianluca Altieri - Stealth Startup",
+        "url": "https://it.linkedin.com/in/gianluca-altieri",
+        "displayedUrl": "LinkedIn › Gianluca Altieri",
+        "description": "Strong background and over 15 years of experience in entrepreneurship and business… · Esperienza: Stealth Startup · Formazione: POLIMI Graduate School of ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 3770 follower",
+        "type": "organic",
+        "position": 40
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/FjBAHqhUADydf39-0.html?signature=1EDDIAW3dsOmXeriWUxo7"
+  },
+  {
+    "#debug": {
+      "requestId": "DmFxtAubapikQG6",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=40",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=40",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=40",
+      "device": "DESKTOP",
+      "page": 5,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=40",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Alessandro Prandini - Stealth Startup",
+        "url": "https://it.linkedin.com/in/alessandro-prandini-622524220",
+        "displayedUrl": "LinkedIn › Alessandro Prandini",
+        "description": "Alessandro Prandini. Stealth Startup Politecnico di Milano. Milano, Lombardia, Italia. 1602 follower Oltre 500 collegamenti. Vedi i collegamenti in comune ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1600 follower",
+        "type": "organic",
+        "position": 41
+      },
+      {
+        "title": "Luca C. - Chief Technology Officer at Stealth Startup",
+        "url": "https://it.linkedin.com/in/luca-c-610128234?trk=public_profile_samename-profile",
+        "displayedUrl": "https://it.linkedin.com › luca-c-610128234",
+        "description": "Chief Technology Officer at Stealth Startup · Esperienza: Stealth Startup · Località: Milano. Vedi il profilo di Luca C. su LinkedIn, una community ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "Chief Technology Officer",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Chief Technology Officer · Stealth Startup"
+        },
+        "type": "organic",
+        "position": 42
+      },
+      {
+        "title": "Matteo Bossolini - Building in Stealth | ESCP | Unicatt",
+        "url": "https://www.linkedin.com/in/matteo-bossolini-55325a1a9/",
+        "displayedUrl": "LinkedIn › Matteo Bossolini",
+        "description": "Building in Stealth | ESCP | Unicatt | Nova Talent · Experience: Stealth Startup · Education: ESCP Business School · Location: Milan · 500+ connections on ...",
+        "emphasizedKeywords": [
+          "in Stealth",
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "followersAmount": "Oltre 1140 follower",
+        "type": "organic",
+        "position": 43
+      },
+      {
+        "title": "Alexander Lobov - Stealth Startup",
+        "url": "https://it.linkedin.com/in/alexlobov",
+        "displayedUrl": "LinkedIn › Alexander Lobov",
+        "description": "Esperienza · Grafico Stealth Startup · Stealth Startup. Rome, Latium, Italy · -. Berlin, Germany · -. Munich, Bavaria, Germany · -. Stockholm, Sweden · -. Stockholm, ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Roma, Lazio, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Roma, Lazio, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 5770 follower",
+        "type": "organic",
+        "position": 44
+      },
+      {
+        "title": "Alessandro Dimich - CTO at Stealth Startup",
+        "url": "https://it.linkedin.com/in/alessandro-dimich-2513057",
+        "displayedUrl": "LinkedIn › Alessandro Dimich",
+        "description": "CTO at Stealth Startup · Esperienza: Stealth Startup · Località: Milano · 183 collegamenti su LinkedIn. Vedi il profilo di Alessandro Dimich su LinkedIn, ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "CTO",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · CTO · Stealth Startup"
+        },
+        "followersAmount": "Oltre 180 follower",
+        "type": "organic",
+        "position": 45
+      },
+      {
+        "title": "Elia Turatti - Stealth Mode",
+        "url": "https://it.linkedin.com/in/elia-turatti",
+        "displayedUrl": "LinkedIn › Elia Turatti",
+        "description": "Esperienza: Stealth Mode · Formazione: Università Ca'​ Foscari Venezia · Località: Milano · Più di 500 collegamenti su LinkedIn. Vedi il profilo di Elia ...",
+        "emphasizedKeywords": [
+          "Stealth Mode",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Mode",
+          "rawText": "Milano, Lombardia, Italia · Stealth Mode"
+        },
+        "followersAmount": "Oltre 3050 follower",
+        "type": "organic",
+        "position": 46
+      },
+      {
+        "title": "Gaby A. - Stealth Mode",
+        "url": "https://it.linkedin.com/in/ict-it-business-analyst-ccba-pm-bi/it",
+        "displayedUrl": "LinkedIn › Gaby A.",
+        "description": "Esperienza · Grafico Stealth Mode. Stealth Mode · -. Geneva, Switzerland · -. Brussels, Brussels Region, Belgium · -. Rome, Italy · -. Rome, Italy · -. Paris, France ...",
+        "emphasizedKeywords": [
+          "Stealth Mode",
+          "Stealth Mode",
+          "Italy",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Roma, Lazio, Italia",
+          "companyName": "Stealth Mode",
+          "rawText": "Roma, Lazio, Italia · Stealth Mode"
+        },
+        "followersAmount": "Oltre 11.150 follower",
+        "type": "organic",
+        "position": 47
+      },
+      {
+        "title": "Luigi Aiello - Stealth Startup",
+        "url": "https://it.linkedin.com/in/luigi-aiello/en",
+        "displayedUrl": "LinkedIn › Luigi Aiello",
+        "description": "Stealth Startup ITIS P. Paleocapa. Bergamo, Lombardy, Italy. 833 followers 500 ... Gorle, Lombardy, Italy. Education. ITIS P. Paleocapa. -. 2011 - 2016.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Italy",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Bergamo, Lombardy, Italy",
+          "companyName": "Stealth Startup",
+          "rawText": "Bergamo, Lombardy, Italy · Stealth Startup"
+        },
+        "followersAmount": "Oltre 830 follower",
+        "type": "organic",
+        "position": 48
+      },
+      {
+        "title": "Andrea Faliva - Stealth Mode",
+        "url": "https://it.linkedin.com/in/andreafaliva",
+        "displayedUrl": "LinkedIn › Andrea Faliva",
+        "description": "Esperienza: Stealth Mode · Formazione: Product Heroes · Località: Torino · Più di 500 collegamenti su LinkedIn. Vedi il profilo di Andrea Faliva su LinkedIn ...",
+        "emphasizedKeywords": [
+          "Stealth Mode",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Torino, Piemonte, Italia",
+          "companyName": "Stealth Mode",
+          "rawText": "Torino, Piemonte, Italia · Stealth Mode"
+        },
+        "followersAmount": "Oltre 4170 follower",
+        "type": "organic",
+        "position": 49
+      },
+      {
+        "title": "Davide Tronzano - Stealth Startup",
+        "url": "https://uk.linkedin.com/in/davidetronzano",
+        "displayedUrl": "LinkedIn › Davide Tronzano",
+        "description": "Building the AI-native platform for behavioural analytics, with chat & voice technology… · Experience: Stealth Startup · Location: London · 500+ connections ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "London, England, United Kingdom",
+          "companyName": "Stealth Startup",
+          "rawText": "London, England, United Kingdom · Stealth Startup"
+        },
+        "followersAmount": "Oltre 5630 follower",
+        "type": "organic",
+        "position": 50
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/DmFxtAubapikQG6-0.html?signature=kSx43eJ3jJxzRbnqF5Im"
+  },
+  {
+    "#debug": {
+      "requestId": "tO5hw5ELCcubpz3",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=50",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=50",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=50",
+      "device": "DESKTOP",
+      "page": 6,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=50",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Matteo Bossolini - Building in Stealth | ESCP | Unicatt",
+        "url": "https://www.linkedin.com/in/matteo-bossolini-55325a1a9/",
+        "displayedUrl": "LinkedIn › Matteo Bossolini",
+        "description": "Building in Stealth | ESCP | Unicatt | Nova Talent · Experience: Stealth Startup · Education: ESCP Business School · Location: Milan · 500+ connections on ...",
+        "emphasizedKeywords": [
+          "in Stealth",
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "followersAmount": "Oltre 1140 follower",
+        "type": "organic",
+        "position": 51
+      },
+      {
+        "title": "Marco Cello - Stealth Startup",
+        "url": "https://it.linkedin.com/in/marcocello",
+        "displayedUrl": "LinkedIn › Marco Cello",
+        "description": "Emerging Trends & Rapid Prototyping ⚡️ Technical Leadership ⚡️ Track Record in… · Esperienza: Stealth Startup ... Metropolitan City of Genoa, Liguria, Italy ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Genova",
+          "companyName": "Stealth Startup",
+          "rawText": "Genova · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2810 follower",
+        "type": "organic",
+        "position": 52
+      },
+      {
+        "title": "Alessandro Dimich - CTO at Stealth Startup",
+        "url": "https://it.linkedin.com/in/alessandro-dimich-2513057",
+        "displayedUrl": "LinkedIn › Alessandro Dimich",
+        "description": "CTO at Stealth Startup · Esperienza: Stealth Startup · Località: Milano · 183 collegamenti su LinkedIn. Vedi il profilo di Alessandro Dimich su LinkedIn, ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "CTO",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · CTO · Stealth Startup"
+        },
+        "followersAmount": "Oltre 180 follower",
+        "type": "organic",
+        "position": 53
+      },
+      {
+        "title": "Mattia Landolfi - Stealth Startup",
+        "url": "https://uk.linkedin.com/in/mattialandolfi",
+        "displayedUrl": "LinkedIn › Mattia Landolfi",
+        "description": "Technical expertise - Engineering background and Robotics Researcher experience… · Experience: Stealth Startup · Education: Politecnico di Torino ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Cracow, Małopolskie, Poland",
+          "companyName": "Stealth Startup",
+          "rawText": "Cracow, Małopolskie, Poland · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1100 follower",
+        "type": "organic",
+        "position": 54
+      },
+      {
+        "title": "Frank Warnsing - Currently building in stealth mode",
+        "url": "https://www.linkedin.com/in/warnsing/",
+        "displayedUrl": "LinkedIn › Frank Warnsing",
+        "description": "Frank Warnsing. Currently building in stealth mode Politecnico di Milano. Zurich, Zurich, Switzerland. 1K followers ...",
+        "emphasizedKeywords": [
+          "in stealth mode",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Zurich, Zurich, Switzerland",
+          "companyName": "Currently building in stealth mode",
+          "rawText": "Zurich, Zurich, Switzerland · Currently building in stealth mode"
+        },
+        "followersAmount": "Oltre 1030 follower",
+        "type": "organic",
+        "position": 55
+      },
+      {
+        "title": "Jithin Kumar Palepu - Building in Stealth | Agentic AI ...",
+        "url": "https://it.linkedin.com/in/jithin-kumar-palepu",
+        "displayedUrl": "LinkedIn › Jithin Kumar Palepu",
+        "description": "Building in Stealth | Agentic AI solution Architect | Robotics & Control ... Stealth Startup. giu 2025 - Presente 4 mesi. Rome, Latium, Italy. Working ...",
+        "emphasizedKeywords": [
+          "in Stealth",
+          "Stealth Startup",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "followersAmount": "Oltre 2930 follower",
+        "type": "organic",
+        "position": 56
+      },
+      {
+        "title": "Andrea Maria Rizzieri - Stealth Startup",
+        "url": "https://it.linkedin.com/in/andrea-maria-rizzieri/en",
+        "displayedUrl": "LinkedIn › Andrea Maria Rizzieri",
+        "description": "Innovative FMCG brand manager with a technical marketing background and business… · Experience: Stealth Startup ... Italy\", written in English. Tutor: Prof ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milan, Lombardy, Italy",
+          "companyName": "Stealth Startup",
+          "rawText": "Milan, Lombardy, Italy · Stealth Startup"
+        },
+        "followersAmount": "Oltre 5040 follower",
+        "type": "organic",
+        "position": 57
+      },
+      {
+        "title": "Luca C. - Chief Technology Officer at Stealth Startup",
+        "url": "https://it.linkedin.com/in/luca-c-610128234?trk=public_profile_samename-profile",
+        "displayedUrl": "https://it.linkedin.com › luca-c-610128234",
+        "description": "Chief Technology Officer at Stealth Startup · Esperienza: Stealth Startup · Località: Milano. Vedi il profilo di Luca C. su LinkedIn, una community ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "Chief Technology Officer",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Chief Technology Officer · Stealth Startup"
+        },
+        "type": "organic",
+        "position": 58
+      },
+      {
+        "title": "Michele Andreano - Stealth Startup",
+        "url": "https://www.linkedin.com/in/michele-andreano-b0289651",
+        "displayedUrl": "LinkedIn › Michele Andreano",
+        "description": "I am building a new venture—a technology company that's transforming how e-commerce… · Experience: Stealth Startup · Education: M Accelerator · Location: ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "West Hollywood, California, United States",
+          "companyName": "Stealth Startup",
+          "rawText": "West Hollywood, California, United States · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1780 follower",
+        "type": "organic",
+        "position": 59
+      },
+      {
+        "title": "Gianluca Toffanin - Stealth Startup",
+        "url": "https://it.linkedin.com/in/gianluca-toffanin-911650169",
+        "displayedUrl": "LinkedIn › Gianluca Toffanin",
+        "description": "Esperienza: Stealth Startup · Formazione: Università degli Studi di Milano-Bicocca · Località: Milano · 198 collegamenti su LinkedIn.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano · Stealth Startup"
+        },
+        "followersAmount": "Oltre 200 follower",
+        "type": "organic",
+        "position": 60
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/tO5hw5ELCcubpz3-0.html?signature=1rHCMfgOBXOPbdbiAst7w"
+  },
+  {
+    "#debug": {
+      "requestId": "IvPf5IyDq3e6ZVC",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=60",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=60",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=60",
+      "device": "DESKTOP",
+      "page": 7,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=60",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Leonardo Manfrini - Stealth Mode",
+        "url": "https://sg.linkedin.com/in/leonardo-manfrini-5a03436b",
+        "displayedUrl": "LinkedIn › Leonardo Manfrini",
+        "description": "... Stealth Startup · Education: Albert-Ludwigs-Universität Freiburg · Location ... Out of the radar, in stealth mode, in a remote location near Singapore.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "in stealth mode"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "followersAmount": "Oltre 3490 follower",
+        "type": "organic",
+        "position": 61
+      },
+      {
+        "title": "Antonio Palma - Stealth Startup",
+        "url": "https://www.linkedin.com/in/antonio-palma",
+        "displayedUrl": "LinkedIn › Antonio Palma",
+        "description": "Let's connect, share ideas, and co-create the decentralised world of tomorrow today. · Experience: Stealth Startup · Education: Politecnico di Milano ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "San Francisco Bay Area",
+          "companyName": "Stealth Startup",
+          "rawText": "San Francisco Bay Area · Stealth Startup"
+        },
+        "followersAmount": "Oltre 3800 follower",
+        "type": "organic",
+        "position": 62
+      },
+      {
+        "title": "Federico Di Pierro - Stealth Startup",
+        "url": "https://it.linkedin.com/in/federico-di-pierro",
+        "displayedUrl": "LinkedIn › Federico Di Pierro",
+        "description": "Esperienza: Stealth Startup · Formazione: Politecnico di Milano · Località: Cesate · 273 collegamenti su LinkedIn. Vedi il profilo di Federico Di Pierro su ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Cesate, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Cesate, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 270 follower",
+        "type": "organic",
+        "position": 63
+      },
+      {
+        "title": "Matteo Pisani - Stealth Startup",
+        "url": "https://it.linkedin.com/in/matteopisanimp",
+        "displayedUrl": "LinkedIn › Matteo Pisani",
+        "description": "Esperienza: Stealth Startup · Formazione: ESCP Europe · Località: Roma · Più di 500 collegamenti su LinkedIn. Vedi il profilo di Matteo Pisani su LinkedIn, ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Roma"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Roma, Lazio, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Roma, Lazio, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 5900 follower",
+        "type": "organic",
+        "position": 64
+      },
+      {
+        "title": "Aldo Altomare - Stealth Startup",
+        "url": "https://it.linkedin.com/in/aldoaltomare",
+        "displayedUrl": "LinkedIn › Aldo Altomare",
+        "description": "· Esperienza: Stealth Startup · Formazione: Sapienza Università di Roma · Località: Roma ... Milano, Italia. -. Roma, Italia. Formazione. Grafico Sapienza ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Roma",
+          "Roma",
+          "Milano",
+          "Italia",
+          "Roma",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Roma, Lazio, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Roma, Lazio, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 3270 follower",
+        "type": "organic",
+        "position": 65
+      },
+      {
+        "title": "Andrea Zanovello - Stealth Startup",
+        "url": "https://it.linkedin.com/in/andrea-zanovello",
+        "displayedUrl": "LinkedIn › Andrea Zanovello",
+        "description": "Esperienza · Grafico Stealth Startup. Stealth Startup. Milan, Lombardy, Italy · - · - · - · -. Milano, Lombardia, Italia · -. Milan Area, Italy · -. Italy · - ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Italy",
+          "Milano",
+          "Italia",
+          "Italy",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1080 follower",
+        "type": "organic",
+        "position": 66
+      },
+      {
+        "title": "Virginia Gambardella - Stealth Startup",
+        "url": "https://it.linkedin.com/in/virginia-gambardella-a7b4a8162",
+        "displayedUrl": "LinkedIn › Virginia Gambardella",
+        "description": "Virginia Gambardella. Stealth Startup CEMS - The Global Alliance in Management Education. Milano, Lombardia, Italia.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 8050 follower",
+        "type": "organic",
+        "position": 67
+      },
+      {
+        "title": "Carlotta Lamura - Stealth Startup",
+        "url": "https://it.linkedin.com/in/carlottalamura",
+        "displayedUrl": "LinkedIn › Carlotta Lamura",
+        "description": "... Stealth Startup · Formazione: USI Università della Svizzera italiana ... Università Vita e Salute San Raffaele, Milano, Italia. -. Rome, Italy. -. Campus ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 3030 follower",
+        "type": "organic",
+        "position": 68
+      },
+      {
+        "title": "Tobia De Angelis - Stealth Startup",
+        "url": "https://it.linkedin.com/in/tobiadeangelis",
+        "displayedUrl": "LinkedIn › Tobia De Angelis",
+        "description": "Entrepreneur. · Esperienza: Stealth Startup · Località: Milano · Più di 500 collegamenti su LinkedIn. Vedi il profilo di Tobia De Angelis su LinkedIn, ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano · Stealth Startup"
+        },
+        "followersAmount": "Oltre 6570 follower",
+        "type": "organic",
+        "position": 69
+      },
+      {
+        "title": "Lucas Zeer - Stealth Startup",
+        "url": "https://it.linkedin.com/in/lucas-zeer",
+        "displayedUrl": "LinkedIn › Lucas Zeer",
+        "description": "Engineering graduate from the University of Waterloo w/ a background in Nanotechnology… · Esperienza: Stealth Startup · Formazione: Politecnico di Milano ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Città del Messico",
+          "companyName": "Stealth Startup",
+          "rawText": "Città del Messico · Stealth Startup"
+        },
+        "followersAmount": "Oltre 540 follower",
+        "type": "organic",
+        "position": 70
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/IvPf5IyDq3e6ZVC-0.html?signature=EHfDhKBg9R07c0KnrOlR"
+  },
+  {
+    "#debug": {
+      "requestId": "hZsj7EjW5wSsu83",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=70",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=70",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=70",
+      "device": "DESKTOP",
+      "page": 8,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=70",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Edoardo Rovetta - Stealth Startup",
+        "url": "https://it.linkedin.com/in/edoardo-rovetta-36a672171",
+        "displayedUrl": "LinkedIn › Edoardo Rovetta",
+        "description": "Esperienza · Grafico Stealth Startup. Stealth Startup. Torino, Piemonte, Italia · -. Torino · -. Italy · -. Torino · -. Torino, Italia · -. Turin, Piedmont, Italy · -.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Torino",
+          "Italia",
+          "Torino",
+          "Italy",
+          "Torino",
+          "Torino",
+          "Italia",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Torino, Piemonte, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Torino, Piemonte, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1600 follower",
+        "type": "organic",
+        "position": 71
+      },
+      {
+        "title": "Davide De Vincentis - Stealth Startup",
+        "url": "https://it.linkedin.com/in/davide-de-vincentis",
+        "displayedUrl": "LinkedIn › Davide De Vincentis",
+        "description": "Esperienza: Stealth Startup · Formazione: Università Politecnica delle Marche · Località: Milano · Più di 500 collegamenti su LinkedIn.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano · Stealth Startup"
+        },
+        "followersAmount": "Oltre 670 follower",
+        "type": "organic",
+        "position": 72
+      },
+      {
+        "title": "Leo Acciarri - Stealth Startup",
+        "url": "https://it.linkedin.com/in/leoacciarri",
+        "displayedUrl": "LinkedIn › Leo Acciarri",
+        "description": "I have an industrial engineering background and I moved my first steps in ops, growth and… · Esperienza: Stealth Startup · Formazione: Politecnico di Milano ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2870 follower",
+        "type": "organic",
+        "position": 73
+      },
+      {
+        "title": "Desirae Webster - Stealth Startup",
+        "url": "https://www.linkedin.com/in/desirae-webster-43b35b197",
+        "displayedUrl": "LinkedIn › Desirae Webster",
+        "description": "I find my passion lies not in a specific product, but in the process of making a great… · Experience: Stealth Startup · Education: Politecnico di Milano ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "United States",
+          "companyName": "Stealth Startup",
+          "rawText": "United States · Stealth Startup"
+        },
+        "followersAmount": "Oltre 710 follower",
+        "type": "organic",
+        "position": 74
+      },
+      {
+        "title": "Pelle Sommansson - Stealth Startup",
+        "url": "https://uk.linkedin.com/in/pellesommansson",
+        "displayedUrl": "LinkedIn › Pelle Sommansson",
+        "description": "Leading GTM, Strategy, M&A, venture building and Product at ZeroNorth. We are making… · Experience: Stealth Startup ... Milan, Lombardy, Italy. -. Milan ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "London, England, United Kingdom",
+          "companyName": "Stealth Startup",
+          "rawText": "London, England, United Kingdom · Stealth Startup"
+        },
+        "followersAmount": "Oltre 17.580 follower",
+        "type": "organic",
+        "position": 75
+      },
+      {
+        "title": "Adam Burgh - Stealth startup",
+        "url": "https://www.linkedin.com/in/adamburgh",
+        "displayedUrl": "LinkedIn › Adam Burgh",
+        "description": "Extensive experience scaling and leading startups and global tech companies in the areas… · Experience: Stealth startup ... Florence Area, Italy. -.",
+        "emphasizedKeywords": [
+          "Stealth startup",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Seattle, Washington, United States",
+          "companyName": "Stealth startup",
+          "rawText": "Seattle, Washington, United States · Stealth startup"
+        },
+        "followersAmount": "Oltre 2800 follower",
+        "type": "organic",
+        "position": 76
+      },
+      {
+        "title": "Cem Benar, Ph.D. - Stealth Startup",
+        "url": "https://www.linkedin.com/in/cembenar",
+        "displayedUrl": "LinkedIn › Cem Benar, Ph.D.",
+        "description": "Ph.D. in Computer Engineering from the New Jersey Institute of Technology. Excellence in… · Experience: Stealth Startup ... Ankara, Turkey. -. Bologna Area, Italy ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Bologna",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "San Francisco Bay Area",
+          "companyName": "Stealth Startup",
+          "rawText": "San Francisco Bay Area · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1460 follower",
+        "type": "organic",
+        "position": 77
+      },
+      {
+        "title": "Virginia Gambardella - Stealth Startup",
+        "url": "https://it.linkedin.com/in/virginia-gambardella-a7b4a8162",
+        "displayedUrl": "LinkedIn › Virginia Gambardella",
+        "description": "Virginia Gambardella. Stealth Startup CEMS - The Global Alliance in Management Education. Milano, Lombardia, Italia.",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Stealth Startup"
+        },
+        "followersAmount": "Oltre 8050 follower",
+        "type": "organic",
+        "position": 78
+      },
+      {
+        "title": "Melodie Yashar - Stealth Startup",
+        "url": "https://www.linkedin.com/in/melodieyashar",
+        "displayedUrl": "LinkedIn › Melodie Yashar",
+        "description": "Melodie Yashar is a program manager, technologist, and researcher. Melodie's work focuses… · Experience: Stealth Startup · Education: Human-Computer ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Los Angeles, California, United States",
+          "companyName": "Stealth Startup",
+          "rawText": "Los Angeles, California, United States · Stealth Startup"
+        },
+        "followersAmount": "Oltre 4880 follower",
+        "type": "organic",
+        "position": 79
+      },
+      {
+        "title": "Gianluca Accossato - Co-founder at Stealth Startup",
+        "url": "https://it.linkedin.com/in/gianluca-accossato-912374119",
+        "displayedUrl": "LinkedIn › Gianluca Accossato",
+        "description": "Co-founder at Stealth Startup. Stealth Startup I.T.I.S Pininfarina. Italia. 182 follower 175 collegamenti. Vedi i collegamenti in comune. Visualizza i ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Italia",
+          "jobTitle": "Co-fondatore",
+          "companyName": "Stealth Startup",
+          "rawText": "Italia · Co-fondatore · Stealth Startup"
+        },
+        "followersAmount": "Oltre 180 follower",
+        "type": "organic",
+        "position": 80
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/hZsj7EjW5wSsu83-0.html?signature=IOosXZl3eb12CHCJk2ND"
+  },
+  {
+    "#debug": {
+      "requestId": "Mk2CusS24W9tXkb",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=80",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=80",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=80",
+      "device": "DESKTOP",
+      "page": 9,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=80",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Yasmeen De Piante‏ - ‏Stealth Startup",
+        "url": "https://ae.linkedin.com/in/yasmeen-de-piante777",
+        "displayedUrl": "LinkedIn › Yasmeen De Piante",
+        "description": "Ciao, I'm Yas. ‍♀️ It's nice to have you here. Benvenuto! ✨ I walked…‏ · الخبرة: ‏Stealth Startup‏ · التعليم: ‏SDA Bocconi‏ · الموقع: ‏أبو ظبي‏ · أكثر من ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "أبو ظبي أبو ظبي الإمارات العربية المتحدة",
+          "jobTitle": "أبو ظبي أبو ظبي الإمارات العربية المتحدة",
+          "companyName": "Stealth Startup",
+          "rawText": "أبو ظبي أبو ظبي الإمارات العربية المتحدة · Stealth Startup"
+        },
+        "followersAmount": "Oltre 6040 follower",
+        "type": "organic",
+        "position": 81
+      },
+      {
+        "title": "Victoria A. - Product Designer, Startup Hustler",
+        "url": "https://it.linkedin.com/in/victoria-a-4a48311b5",
+        "displayedUrl": "LinkedIn › Victoria A.",
+        "description": "Product Designer, Startup Hustler · Check out my CV & Portfolio: https://victoria-alex.art/ · Esperienza: Stealth Startup · Località: Milano · Più di 500 ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "Founder",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Founder · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2080 follower",
+        "type": "organic",
+        "position": 82
+      },
+      {
+        "title": "Elyas Tirit - Product & Creative Designer in Stealth",
+        "url": "https://it.linkedin.com/in/elyas-tirit",
+        "displayedUrl": "LinkedIn › Elyas Tirit",
+        "description": "Product & Creative Designer in Stealth · Esperienza: Stealth Startup · Formazione: CNOS-FAP Professional Institute (National Center for Salesian Training ...",
+        "emphasizedKeywords": [
+          "in Stealth",
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano",
+          "jobTitle": "Product & Creative Designer",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano · Product & Creative Designer · Stealth Startup"
+        },
+        "followersAmount": "Oltre 690 follower",
+        "type": "organic",
+        "position": 83
+      },
+      {
+        "title": "Simone Lini – Stealth Startup",
+        "url": "https://ch.linkedin.com/in/simonelini",
+        "displayedUrl": "LinkedIn › Simone Lini",
+        "description": "I build and scale digital marketplaces by combining deep Product and Business Development… · Berufserfahrung: Stealth Startup ... Milano, Italia. -. Sydney ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Zürich, Zürich, Schweiz",
+          "companyName": "Stealth Startup",
+          "rawText": "Zürich, Zürich, Schweiz · Stealth Startup"
+        },
+        "followersAmount": "Oltre 4630 follower",
+        "type": "organic",
+        "position": 84
+      },
+      {
+        "title": "Emile Jellinek - Business Designer | Freedom Tech",
+        "url": "https://it.linkedin.com/in/emile-jellinek",
+        "displayedUrl": "LinkedIn › Emile Jellinek",
+        "description": "Business Designer | Freedom Tech | Building a stealth startup · Dynamic entrepreneur with a background in digital marketing ... in stealth mode at the ...",
+        "emphasizedKeywords": [
+          "stealth startup",
+          "in stealth mode"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "followersAmount": "Oltre 1860 follower",
+        "type": "organic",
+        "position": 85
+      },
+      {
+        "title": "Giuseppe Collu - Elettrotecnico presso Stealth Startup",
+        "url": "https://it.linkedin.com/in/giuseppe-collu-35b3032a5",
+        "displayedUrl": "https://it.linkedin.com › ...",
+        "description": "Elettrotecnico presso Stealth Startup · Esperienza: Stealth Startup · Località: 10139 ... Elettrotecnico presso Stealth Startup. Stealth Startup. Torino, Piemonte ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Stealth Startup",
+          "Stealth Startup",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Torino, Piemonte, Italia",
+          "jobTitle": "Elettrotecnico",
+          "companyName": "Stealth Startup",
+          "rawText": "Torino, Piemonte, Italia · Elettrotecnico · Stealth Startup"
+        },
+        "type": "organic",
+        "position": 86
+      },
+      {
+        "title": "Tommaso Migliore - Founder @ Stealth",
+        "url": "https://it.linkedin.com/in/tommaso-migliore",
+        "displayedUrl": "LinkedIn › Tommaso Migliore",
+        "description": "Founder @ Stealth | Building something new · Independent Research & Development · Esperienza: Stealth Startup · Località: Napoli · Più di 500 collegamenti ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Napoli, Campania, Italia",
+          "jobTitle": "Founder",
+          "companyName": "Stealth Startup",
+          "rawText": "Napoli, Campania, Italia · Founder · Stealth Startup"
+        },
+        "followersAmount": "Oltre 750 follower",
+        "type": "organic",
+        "position": 87
+      },
+      {
+        "title": "Maurizio Rossi - \"House of Future\" - (Stealth-Mode)",
+        "url": "https://it.linkedin.com/in/rossimaurizio",
+        "displayedUrl": "LinkedIn › Maurizio Rossi",
+        "description": "About Maurizio Rossi: Overview Passionate entrepreneur with a distinguished track… · Esperienza: \"House of Future\" - (Stealth-Mode) ... Padova, Veneto, Italia.",
+        "emphasizedKeywords": [
+          "Stealth-Mode",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Padova, Veneto, Italia",
+          "companyName": "\"House of Future\" - (Stealth-Mode)",
+          "rawText": "Padova, Veneto, Italia · \"House of Future\" - (Stealth-Mode)"
+        },
+        "followersAmount": "Oltre 14.960 follower",
+        "type": "organic",
+        "position": 88
+      },
+      {
+        "title": "Adamo Giuseppe Marco Campobasso - Founder",
+        "url": "https://it.linkedin.com/in/adamo-giuseppe-marco-campobasso-5684ab10a",
+        "displayedUrl": "LinkedIn › Adamo Giuseppe Marco Campobasso",
+        "description": "Milano, Lombardia, Italia ... Stealth Startup. gen 2024 - Presente 1 anno e 9 mesi. Milano, Lombardia, Italia. Shaping the Future of Open Innovation: Stealth Mode ...",
+        "emphasizedKeywords": [
+          "Milano",
+          "Italia",
+          "Stealth Startup",
+          "Milano",
+          "Italia",
+          "Stealth Mode"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "Working on a new project",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Working on a new project · Stealth Startup"
+        },
+        "followersAmount": "Oltre 400 follower",
+        "type": "organic",
+        "position": 89
+      },
+      {
+        "title": "Marco Valerio Rossi - Building something new | HRTech",
+        "url": "https://it.linkedin.com/in/marco-valerio-rossi-2b697a95",
+        "displayedUrl": "LinkedIn › Marco Valerio Rossi",
+        "description": "Stealth Startup Cornell University. Milano, Lombardia, Italia. 2073 follower Oltre 500 collegamenti. Vedi i collegamenti in comune. Visualizza i collegamenti in ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "Founding Team - Building in HRTech",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Founding Team - Building in HRTech · Stealth Startup"
+        },
+        "followersAmount": "Oltre 2070 follower",
+        "type": "organic",
+        "position": 90
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/Mk2CusS24W9tXkb-0.html?signature=1qHZ5BnnSZaPwNSI3KpM5"
+  },
+  {
+    "#debug": {
+      "requestId": "57xRPE7mjhDxMTd",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=90",
+      "loadedUrl": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=90",
+      "method": "GET",
+      "retryCount": 0,
+      "errorMessages": [],
+      "statusCode": 200
+    },
+    "#error": false,
+    "searchQuery": {
+      "term": "site:linkedin.com/in (\"stealth mode\" OR \"stealth startup\" OR \"in stealth\") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)",
+      "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=90",
+      "device": "DESKTOP",
+      "page": 10,
+      "type": "SEARCH",
+      "domain": "google.it",
+      "countryCode": "IT",
+      "languageCode": null,
+      "locationUule": null,
+      "resultsPerPage": 10
+    },
+    "url": "http://www.google.it/search?q=site%3Alinkedin.com%2Fin%20(%22stealth%20mode%22%20OR%20%22stealth%20startup%22%20OR%20%22in%20stealth%22)%20(Italy%20OR%20Italia%20OR%20Milano%20OR%20Roma%20OR%20Torino%20OR%20Firenze%20OR%20Bologna)&start=90",
+    "hasNextPage": true,
+    "serpProviderCode": "L",
+    "resultsTotal": null,
+    "relatedQueries": [],
+    "paidResults": [],
+    "paidProducts": [],
+    "organicResults": [
+      {
+        "title": "Simone Lini – Stealth Startup",
+        "url": "https://ch.linkedin.com/in/simonelini",
+        "displayedUrl": "LinkedIn › Simone Lini",
+        "description": "I build and scale digital marketplaces by combining deep Product and Business Development… · Berufserfahrung: Stealth Startup ... Milano, Italia. -. Sydney ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Milano",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Zürich, Zürich, Schweiz",
+          "companyName": "Stealth Startup",
+          "rawText": "Zürich, Zürich, Schweiz · Stealth Startup"
+        },
+        "followersAmount": "Oltre 4630 follower",
+        "type": "organic",
+        "position": 91
+      },
+      {
+        "title": "Alejandro Santiago - Stealth Startup (AI + EdTech)",
+        "url": "https://es.linkedin.com/in/alejandro-santiago-44259b159/es",
+        "displayedUrl": "LinkedIn › Alejandro Santiago",
+        "description": "Experiencia: Stealth Startup (AI + EdTech) · Educación: Loughborough University · Ubicación: España · 386 contactos en LinkedIn. Ver el perfil de Alejandro ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "España",
+          "companyName": "Stealth Startup (AI + EdTech)",
+          "rawText": "España · Stealth Startup (AI + EdTech)"
+        },
+        "followersAmount": "Oltre 400 follower",
+        "type": "organic",
+        "position": 92
+      },
+      {
+        "title": "Lorenzo Turrino - Stealth Startup",
+        "url": "https://uk.linkedin.com/in/lorenzoturrino/it",
+        "displayedUrl": "LinkedIn › Lorenzo Turrino",
+        "description": "Esperienza: Stealth Startup · Formazione: Makers Academy · Località: Londra · Più di 500 collegamenti su LinkedIn. Vedi il profilo di Lorenzo Turrino su ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Londra, Inghilterra, Regno Unito",
+          "companyName": "Stealth Startup",
+          "rawText": "Londra, Inghilterra, Regno Unito · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1100 follower",
+        "type": "organic",
+        "position": 93
+      },
+      {
+        "title": "Giuseppe Collu - Elettrotecnico presso Stealth Startup",
+        "url": "https://it.linkedin.com/in/giuseppe-collu-35b3032a5",
+        "displayedUrl": "https://it.linkedin.com › ...",
+        "description": "Elettrotecnico presso Stealth Startup · Esperienza: Stealth Startup · Località: 10139 ... Elettrotecnico presso Stealth Startup. Stealth Startup. Torino, Piemonte ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Stealth Startup",
+          "Stealth Startup",
+          "Stealth Startup",
+          "Torino"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Torino, Piemonte, Italia",
+          "jobTitle": "Elettrotecnico",
+          "companyName": "Stealth Startup",
+          "rawText": "Torino, Piemonte, Italia · Elettrotecnico · Stealth Startup"
+        },
+        "type": "organic",
+        "position": 94
+      },
+      {
+        "title": "Alessandro Facchin - Stealth Startup",
+        "url": "https://uk.linkedin.com/in/alessandrofacchin/en",
+        "displayedUrl": "LinkedIn › Alessandro Facchin",
+        "description": "Experience: Stealth Startup · Education: The University of Edinburgh ... Milan Area, Italy. Education. The University of Edinburgh Graphic · The University ...",
+        "emphasizedKeywords": [
+          "Stealth Startup",
+          "Italy"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Brighton, England, United Kingdom",
+          "companyName": "Stealth Startup",
+          "rawText": "Brighton, England, United Kingdom · Stealth Startup"
+        },
+        "followersAmount": "Oltre 1880 follower",
+        "type": "organic",
+        "position": 95
+      },
+      {
+        "title": "Emile Jellinek - Business Designer | Freedom Tech",
+        "url": "https://it.linkedin.com/in/emile-jellinek",
+        "displayedUrl": "LinkedIn › Emile Jellinek",
+        "description": "Business Designer | Freedom Tech | Building a stealth startup · Dynamic entrepreneur with a background in digital marketing ... in stealth mode at the ...",
+        "emphasizedKeywords": [
+          "stealth startup",
+          "in stealth mode"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "followersAmount": "Oltre 1860 follower",
+        "type": "organic",
+        "position": 96
+      },
+      {
+        "title": "Danilo Parodi - Digital Health Company (stealth mode)",
+        "url": "https://it.linkedin.com/in/daniloparodi/it",
+        "displayedUrl": "LinkedIn › Danilo Parodi",
+        "description": "Esperienza · Digital Health Company (stealth mode). Cernusco sul Naviglio, Lombardia, Italia · -. Da remoto · -. Milan Area, Italy · -. Milano, Italia · -. Milano, ...",
+        "emphasizedKeywords": [
+          "stealth mode",
+          "Italia",
+          "Italy",
+          "Milano",
+          "Italia",
+          "Milano"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Cernusco sul Naviglio, Lombardia, Italia",
+          "companyName": "Digital Health Company (stealth mode)",
+          "rawText": "Cernusco sul Naviglio, Lombardia, Italia · Digital Health Company (stealth mode)"
+        },
+        "followersAmount": "Oltre 6180 follower",
+        "type": "organic",
+        "position": 97
+      },
+      {
+        "title": "Giulio Peloso - Stealth Mode",
+        "url": "https://it.linkedin.com/in/giuliopeloso",
+        "displayedUrl": "LinkedIn › Giulio Peloso",
+        "description": "Giulio Peloso. Stealth Mode Università degli Studi di Padova. Padova, Veneto, Italia. 1064 follower ...",
+        "emphasizedKeywords": [
+          "Stealth Mode",
+          "Italia"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Padova, Veneto, Italia",
+          "companyName": "Stealth Mode",
+          "rawText": "Padova, Veneto, Italia · Stealth Mode"
+        },
+        "followersAmount": "Oltre 1060 follower",
+        "type": "organic",
+        "position": 98
+      },
+      {
+        "title": "Adamo Giuseppe Marco Campobasso - Founder",
+        "url": "https://it.linkedin.com/in/adamo-giuseppe-marco-campobasso-5684ab10a",
+        "displayedUrl": "LinkedIn › Adamo Giuseppe Marco Campobasso",
+        "description": "Milano, Lombardia, Italia ... Stealth Startup. gen 2024 - Presente 1 anno e 9 mesi. Milano, Lombardia, Italia. Shaping the Future of Open Innovation: Stealth Mode ...",
+        "emphasizedKeywords": [
+          "Milano",
+          "Italia",
+          "Stealth Startup",
+          "Milano",
+          "Italia",
+          "Stealth Mode"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "Milano, Lombardia, Italia",
+          "jobTitle": "Working on a new project",
+          "companyName": "Stealth Startup",
+          "rawText": "Milano, Lombardia, Italia · Working on a new project · Stealth Startup"
+        },
+        "followersAmount": "Oltre 400 follower",
+        "type": "organic",
+        "position": 99
+      },
+      {
+        "title": "Davide Tronzano - Stealth Startup",
+        "url": "https://uk.linkedin.com/in/davidetronzano",
+        "displayedUrl": "LinkedIn › Davide Tronzano",
+        "description": "Building the AI-native platform for behavioural analytics, with chat & voice technology… · Experience: Stealth Startup · Location: London · 500+ connections ...",
+        "emphasizedKeywords": [
+          "Stealth Startup"
+        ],
+        "siteLinks": [],
+        "productInfo": {},
+        "personalInfo": {
+          "location": "London, England, United Kingdom",
+          "companyName": "Stealth Startup",
+          "rawText": "London, England, United Kingdom · Stealth Startup"
+        },
+        "followersAmount": "Oltre 5630 follower",
+        "type": "organic",
+        "position": 100
+      }
+    ],
+    "suggestedResults": [],
+    "peopleAlsoAsk": [],
+    "customData": null,
+    "htmlSnapshotUrl": "https://api.apify.com/v2/key-value-stores/FLz3yXAxvXGQwt4pT/records/57xRPE7mjhDxMTd-0.html?signature=3WSTavcSVyKVecvJIoZM"
+  }
+]
