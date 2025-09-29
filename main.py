@@ -1,48 +1,47 @@
 # streamlit run app.py
 # Requisiti:
-#   pip install streamlit apify-client openai pandas python-dotenv
-# ENV (opzionali): APIFY_TOKEN, OPENAI_API_KEY
+#   pip install streamlit apify-client pandas python-dotenv
+# ENV: APIFY_TOKEN
 
-import os
-import json
-import re
+import os, json, re
 from urllib.parse import urlparse
-from typing import List, Dict, Any, Tuple, Set
+from typing import List, Dict, Any, Tuple, Optional
 
 import pandas as pd
 import streamlit as st
 from apify_client import ApifyClient
-from openai import OpenAI
+
+st.set_page_config(page_title="SERP → People Master (LinkedIn Enrichment)", layout="wide")
 
 # ----------------------------
-# Configurazione pagina
-# ----------------------------
-st.set_page_config(
-    page_title="Google SERP → JSON Viewer (Apify + OpenAI)",
-    layout="wide",
-)
-
-# ----------------------------
-# Helpers comuni
+# Utils
 # ----------------------------
 def get_env(name: str, default: str = "") -> str:
     return os.getenv(name, default)
 
+def normalize_linkedin_url(u: str) -> str:
+    try:
+        p = urlparse(u)
+        scheme = "https"
+        host = (p.hostname or "").lower()
+        host = (host
+                .replace("www.linkedin.", "linkedin.")
+                .replace("it.linkedin.", "linkedin.")
+                .replace("es.linkedin.", "linkedin.")
+                .replace("uk.linkedin.", "linkedin."))
+        path = (p.path or "").rstrip("/")
+        return f"{scheme}://{host}{path}"
+    except Exception:
+        return (u or "").strip()
+
 def download_dataset_items(client: ApifyClient, dataset_id: str) -> List[Dict[str, Any]]:
-    """Scarica tutti gli item dal dataset di Apify (lista di pagine SERP)."""
     items = []
     for it in client.dataset(dataset_id).iterate_items():
         items.append(it)
     return items
 
-def save_json(items: List[Dict[str, Any]], path: str) -> None:
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(items, f, ensure_ascii=False, indent=2)
-
 def items_to_dataframe(items: List[Dict[str, Any]]) -> pd.DataFrame:
-    """Appiattisce le organicResults in una tabella comoda."""
-    if not items:
-        return pd.DataFrame()
+    if not items: return pd.DataFrame()
     rows = []
     for it in items:
         for r in it.get("organicResults", []):
@@ -59,90 +58,27 @@ def items_to_dataframe(items: List[Dict[str, Any]]) -> pd.DataFrame:
             })
     return pd.DataFrame(rows)
 
-# ----------------------------
-# Estrazione locale (no-AI)
-# ----------------------------
-def normalize_linkedin_url(u: str) -> str:
-    """Normalizza URL LinkedIn per dedup (hostname lower, rimuove query/fragment, no slash finale)."""
-    try:
-        p = urlparse(u)
-        scheme = "https"
-        host = (p.hostname or "").lower()
-        host = (host
-                .replace("www.linkedin.", "linkedin.")
-                .replace("it.linkedin.", "linkedin.")
-                .replace("es.linkedin.", "linkedin.")
-                .replace("uk.linkedin.", "linkedin."))
-        path = (p.path or "").rstrip("/")
-        return f"{scheme}://{host}{path}"
-    except Exception:
-        return (u or "").strip()
-
 def split_name_from_title(title: str) -> Tuple[str, str]:
-    """
-    Estrae Nome e Cognome da titoli del tipo:
-    "Nome Cognome - Stealth Startup" | "Nome Cognome | Stealth Mode" | "Nome Cognome — ...".
-    Heuristic semplice ma efficace nella maggior parte dei casi.
-    """
-    if not title:
-        return "", ""
+    if not title: return "", ""
     first_part = re.split(r"\s[-–—|·•]\s", title, maxsplit=1)[0]
     first_part = re.sub(r"\s+\([^)]*\)$", "", first_part).strip()
     first_part = re.sub(r"^\s*LinkedIn\s*›\s*", "", first_part, flags=re.IGNORECASE).strip()
     tokens = [t for t in re.split(r"\s+", first_part) if t]
-    if len(tokens) >= 2:
-        return tokens[0], " ".join(tokens[1:])
+    if len(tokens) >= 2: return tokens[0], " ".join(tokens[1:])
     return first_part, ""
 
-def extract_people_from_serp(items: List[Dict[str, Any]]) -> pd.DataFrame:
-    """Ritorna DataFrame [Nome, Cognome, LinkedIn] usando solo parsing locale del JSON Apify."""
-    rows = []
-    for page in items:
-        for r in page.get("organicResults", []):
-            url = r.get("url") or r.get("link") or r.get("sourceUrl")
-            if not url or "linkedin.com" not in url:
-                continue
-            # preferisci profili /in/ o /pub/; accetta altri solo se non chiari
-            if not re.search(r"linkedin\.com/(in|pub)/", url):
-                # alcuni profili localizzati possono avere formati diversi: non escludere a priori
-                pass
-            title = r.get("title") or r.get("displayedUrl") or ""
-            nome, cognome = split_name_from_title(title)
-            rows.append({"Nome": nome, "Cognome": cognome, "LinkedIn": url})
-
-    # dedup su LinkedIn normalizzato
-    seen: Set[str] = set()
-    dedup = []
-    for row in rows:
-        norm = normalize_linkedin_url(row["LinkedIn"])
-        if norm not in seen:
-            seen.add(norm)
-            row["LinkedIn"] = norm
-            dedup.append(row)
-    return pd.DataFrame(dedup, columns=["Nome", "Cognome", "LinkedIn"])
-
 def build_people_table(items: List[Dict[str, Any]]) -> pd.DataFrame:
-    """
-    Crea una tabella 'people' direttamente dagli organicResults:
-    Nome | Cognome | Title | Snippet | Location | Followers | LinkedIn
-    """
     rows = []
     for page in items:
         for r in page.get("organicResults", []):
             url = r.get("url") or r.get("link") or r.get("sourceUrl")
-            if not url or "linkedin.com" not in url:
-                continue
-
-            # Prendiamo i campi richiesti
+            if not url or "linkedin.com" not in url: continue
             title = r.get("title") or ""
             snippet = r.get("description") or r.get("snippet") or ""
             location = (r.get("personalInfo") or {}).get("location")
             followers = r.get("followersAmount")
-
-            # Nome/Cognome dal title (heuristic)
             nome, cognome = split_name_from_title(title)
             url_norm = normalize_linkedin_url(url)
-
             rows.append({
                 "Nome": nome,
                 "Cognome": cognome,
@@ -150,427 +86,540 @@ def build_people_table(items: List[Dict[str, Any]]) -> pd.DataFrame:
                 "Snippet": snippet,
                 "Location": location,
                 "Followers": followers,
-                "LinkedIn": url_norm,  # sarà reso cliccabile nella UI
+                "LinkedIn": url_norm,
             })
-
-    df = pd.DataFrame(rows, columns=["Nome", "Cognome", "Title", "Snippet", "Location", "Followers", "LinkedIn"])
-
-    # Dedup per link
-    if not df.empty:
-        df = df.drop_duplicates(subset=["LinkedIn"]).reset_index(drop=True)
+    df = pd.DataFrame(rows, columns=["Nome","Cognome","Title","Snippet","Location","Followers","LinkedIn"])
+    if not df.empty: df = df.drop_duplicates(subset=["LinkedIn"]).reset_index(drop=True)
     return df
 
 # ----------------------------
-# Funzioni AI (OpenAI)
+# Parsing caption (date/durata) per esperienze
 # ----------------------------
-def chunk_list(lst: List[Any], size: int) -> List[List[Any]]:
-    return [lst[i:i+size] for i in range(0, len(lst), size)]
+MONTHS = {
+    # EN
+    "jan":1,"january":1,"feb":2,"february":2,"mar":3,"march":3,"apr":4,"april":4,"may":5,
+    "jun":6,"june":6,"jul":7,"july":7,"aug":8,"august":8,"sep":9,"sept":9,"september":9,
+    "oct":10,"october":10,"nov":11,"november":11,"dec":12,"december":12,
+    # IT
+    "gen":1,"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giu":6,"giugno":6,
+    "lug":7,"luglio":7,"ago":8,"agosto":8,"set":9,"settembre":9,
+    "ott":10,"ottobre":10,"novembre":11,"dic":12,"dicembre":12,
+}
+YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
+DUR_RE = re.compile(
+    r"(?:(?P<yrs>\d+)\s*(?:yrs?|anni|year|years|anno))?\s*(?:[,/·]?\s*)?(?:(?P<mos>\d+)\s*(?:mos?|mesi|month|months|mese))?",
+    re.IGNORECASE
+)
 
-def run_openai_batch_read(client_oa: OpenAI, items: List[Dict[str, Any]], model: str = "gpt-4o-mini", batch_size: int = 50) -> Tuple[List[str], str]:
-    """Crea executive summary + URL LinkedIn via AI, leggendo il JSON a batch."""
-    all_urls: Set[str] = set()
-    partial_summaries: List[str] = []
-    batches = chunk_list(items, batch_size)
+def _parse_month_year(token: str) -> Tuple[Optional[int], Optional[int]]:
+    t = token.strip().lower()
+    parts = re.split(r"[ \-_/.,]", t)
+    if not parts: return None, None
+    m = None; y = None
+    for part in parts:
+        if part in MONTHS: m = MONTHS[part]; break
+    y4 = YEAR_RE.search(t)
+    if y4: y = int(y4.group())
+    else:
+        m2 = re.search(r"\b(\d{2})\b", t)
+        if m2:
+            yy = int(m2.group(1))
+            y = 2000 + yy if yy <= 40 else 1900 + yy
+    return m, y
 
-    for idx, batch in enumerate(batches, start=1):
-        minimal_batch = [
-            {
-                "title": it.get("title"),
-                "url": it.get("url") or it.get("link") or it.get("sourceUrl"),
-                "snippet": it.get("snippet") or it.get("description"),
-                "displayedUrl": it.get("displayedUrl"),
-                "searchQuery": it.get("searchQuery"),
-            }
-            for it in batch
-        ]
+def parse_caption_dates(caption: Optional[str]) -> Tuple[Optional[str], Optional[str], Optional[bool]]:
+    if not caption: return None, None, None
+    main = caption.split("·")[0].strip()
+    parts = re.split(r"\s*[-–—]\s*", main)
+    if len(parts) == 1:
+        m = YEAR_RE.search(parts[0]); 
+        return (f"{int(m.group()):04d}-01-01" if m else None, None, None)
+    start_str, end_str = parts[0], parts[1]
+    if re.search(r"(present|presente|oggi|attuale)", end_str, re.IGNORECASE):
+        end_ymd, is_curr = None, True
+    else:
+        em, ey = _parse_month_year(end_str)
+        if ey: end_ymd = f"{ey:04d}-{(em or 1):02d}-01"
+        else:
+            m = YEAR_RE.search(end_str); end_ymd = f"{int(m.group()):04d}-01-01" if m else None
+        is_curr = False if end_ymd else None
+    sm, sy = _parse_month_year(start_str)
+    if sy: start_ymd = f"{sy:04d}-{(sm or 1):02d}-01"
+    else:
+        m = YEAR_RE.search(start_str); start_ymd = f"{int(m.group()):04d}-01-01" if m else None
+    return start_ymd, end_ymd, is_curr
 
-        prompt = (
-            "Sei un assistente che analizza risultati Google in formato JSON.\n"
-            "Dal seguente batch di risultati estrai:\n"
-            "1) Tutte le URL di profili/domini LinkedIn trovate (lista deduplicata);\n"
-            "2) Nomi di città/località italiane citate (se presenti);\n"
-            "3) 5-10 parole chiave ricorrenti;\n"
-            "4) Un riassunto di 3-5 righe del contenuto del batch.\n\n"
-            "Rispondi in JSON con le chiavi: urls, cities, keywords, summary.\n\n"
-            f"Batch size: {len(minimal_batch)}\n"
-        )
+def parse_duration_months(text: Optional[str]) -> Optional[int]:
+    if not text: return None
+    m = DUR_RE.search(text)
+    if not m: return None
+    total = 0
+    if m.group("yrs"): total += int(m.group("yrs")) * 12
+    if m.group("mos"): total += int(m.group("mos"))
+    return total or None
 
-        response = client_oa.responses.create(
-            model=model,
-            input=[
-                {"role": "system", "content": "Rispondi solo in JSON valido."},
-                {"role": "user", "content": prompt},
-                {"role": "user", "content": json.dumps(minimal_batch, ensure_ascii=False)},
-            ],
-            temperature=0.2,
-        )
+def guess_employment_type(text: Optional[str]) -> Optional[str]:
+    if not text: return None
+    t = text.lower()
+    for lab in ["full-time","part-time","intern","internship","contract","freelance","self-employed","co-founder","founder","apprenticeship","volunteer",
+                "tempo pieno","tempo parziale","tirocin","contratto","autonom","volontar"]:
+        if lab in t: return lab
+    return None
 
-        content = getattr(response, "output_text", None) or response.choices[0].message.content
-        try:
-            data = json.loads(content)
-        except Exception:
-            try:
-                start = content.find("{"); end = content.rfind("}")
-                data = json.loads(content[start:end+1])
-            except Exception:
-                data = {"urls": [], "cities": [], "keywords": [], "summary": content}
+def fmt_ymd(ymd: Optional[str]) -> Optional[str]:
+    if not ymd: return None
+    # expect YYYY-MM-01 -> YYYY-MM
+    m = re.match(r"(\d{4})-(\d{2})-\d{2}", ymd)
+    if m:
+        return f"{m.group(1)}-{m.group(2)}"
+    return ymd
 
-        for u in data.get("urls", []) or []:
-            all_urls.add(u)
-        partial_summaries.append(f"[Batch {idx}/{len(batches)}] " + (data.get("summary") or ""))
+# ----------------------------
+# Enrichment
+# ----------------------------
+def run_linkedin_enrichment(apify_client: ApifyClient, profile_urls: list[str], batch_size: int = 80) -> list[dict]:
+    all_items = []
+    if not profile_urls: return all_items
+    chunks = [profile_urls[i:i+batch_size] for i in range(0, len(profile_urls), batch_size)]
+    progress = st.progress(0.0, text="Invio batch ad Apify…")
+    for i, ch in enumerate(chunks, start=1):
+        run_input = {"profileUrls": ch}
+        run = apify_client.actor("2SyF0bVxmgGr8IVCZ").call(run_input=run_input)
+        for it in apify_client.dataset(run["defaultDatasetId"]).iterate_items():
+            all_items.append(it)
+        progress.progress(i / len(chunks), text=f"Completato batch {i}/{len(chunks)}")
+    progress.empty()
+    return all_items
 
-    final_prompt = (
-        "Unisci i seguenti riassunti parziali in un unico executive summary (max 250 parole) "
-        "e proponi 5 azioni utili. Rispondi in italiano.\n\n"
-        + "\n\n".join(partial_summaries)
-    )
-    final_resp = client_oa.responses.create(
-        model=model,
-        input=[
-            {"role": "system", "content": "Sei un analista conciso."},
-            {"role": "user", "content": final_prompt},
-        ],
-        temperature=0.3,
-    )
-    final_summary = getattr(final_resp, "output_text", None) or final_resp.choices[0].message.content
-    return sorted(all_urls), final_summary
+# ----------------------------
+# Costruzione People Master
+# ----------------------------
+def summarize_skills(item: dict, top_n: int = 8) -> Optional[str]:
+    titles = [s.get("title") for s in (item.get("skills") or []) if s.get("title")]
+    if titles: return ", ".join(titles[:top_n])
+    return item.get("topSkillsByEndorsements")
 
-def analyze_json_people_ai(client_oa: OpenAI, items: List[Dict[str, Any]], model: str = "gpt-4o-mini", batch_size: int = 60) -> pd.DataFrame:
-    """Pulsante ANALIZZA JSON (AI): estrae Nome/Cognome/LinkedIn con prompt richiesto."""
-    def _minimalize(batch):
-        return [
-            {
-                "title": it.get("title"),
-                "url": it.get("url") or it.get("link") or it.get("sourceUrl"),
-                "snippet": it.get("snippet") or it.get("description"),
-            }
-            for it in batch
-        ]
+def experiences_full_string(item: dict) -> Optional[str]:
+    """
+    Una stringa unica con TUTTE le esperienze, leggibile.
+    Formato: 'YYYY-MM → YYYY-MM/Present: Role @ Company — Location | descrizione' concatenate con ' • '
+    """
+    exps = item.get("experiences") or []
+    if not exps:
+        return None
 
-    all_rows = []
-    batches = chunk_list(items, batch_size)
-    for batch in batches:
-        minimal = _minimalize(batch)
-        user_prompt = (
-            "leggi il file json e dammi Nome cognome link linkedin\n\n"
-            "Regole:\n"
-            "- Considera solo risultati che sembrano profili LinkedIn personali (non aziende/pagine scuola).\n"
-            "- Se non sei sicuro del nome/cognome, prova a inferirlo dal title/snippet; altrimenti lascia vuoto.\n"
-            "- Rispondi SOLO con un JSON valido: una lista di oggetti con chiavi esattamente: "
-            '"Nome", "Cognome", "LinkedIn".\n'
-            "- Niente testo fuori dal JSON.\n"
-        )
-        resp = client_oa.responses.create(
-            model=model,
-            input=[
-                {"role": "system", "content": "Sei un estrattore di dati: restituisci solo JSON valido (lista di oggetti)."},
-                {"role": "user", "content": user_prompt},
-                {"role": "user", "content": json.dumps(minimal, ensure_ascii=False)},
-            ],
-            temperature=0.1,
-        )
-        content = getattr(resp, "output_text", None) or resp.choices[0].message.content
-        try:
-            data_list = json.loads(content)
-        except Exception:
-            try:
-                start = content.find("["); end = content.rfind("]")
-                data_list = json.loads(content[start:end+1])
-            except Exception:
-                data_list = []
+    def _desc_from(sc_list):
+        texts = []
+        for sc in sc_list or []:
+            for d in sc.get("description") or []:
+                t = d.get("text")
+                if t:
+                    texts.append(t.strip())
+        if not texts:
+            return None
+        # prendi solo la prima frase breve per compattezza
+        first = texts[0].split("\n")[0]
+        return first[:300]
 
-        for row in data_list:
-            nome = (row.get("Nome") or "").strip()
-            cognome = (row.get("Cognome") or "").strip()
-            url = (row.get("LinkedIn") or "").strip()
-            if url and "linkedin.com" in url:
-                all_rows.append({"Nome": nome, "Cognome": cognome, "LinkedIn": url})
+    lines = []
+    for exp in exps:
+        breakdown = exp.get("breakdown")
+        if breakdown:
+            company = exp.get("title")
+            exp_caption = exp.get("caption") or ""
+            for sc in exp.get("subComponents") or []:
+                role = sc.get("title")
+                caption = sc.get("caption") or exp_caption
+                loc = sc.get("metadata") or exp.get("metadata") or ""
+                start_d, end_d, is_curr = parse_caption_dates(caption)
+                start_s = fmt_ymd(start_d) or ""
+                end_s = fmt_ymd(end_d) if end_d else ("Present" if is_curr else "")
+                when = f"{start_s} → {end_s}".strip()
+                desc = _desc_from([sc]) or ""
+                part = f"{when}: {role or ''} @ {company or ''}".strip()
+                if loc:
+                    part += f" — {loc}"
+                if desc:
+                    part += f" | {desc}"
+                lines.append(part)
+        else:
+            role = exp.get("title")
+            company = exp.get("subtitle") or exp.get("title")
+            caption = exp.get("caption") or ""
+            loc = exp.get("metadata") or ""
+            start_d, end_d, is_curr = parse_caption_dates(caption)
+            start_s = fmt_ymd(start_d) or ""
+            end_s = fmt_ymd(end_d) if end_d else ("Present" if is_curr else "")
+            when = f"{start_s} → {end_s}".strip()
+            desc = _desc_from(exp.get("subComponents")) or ""
+            part = f"{when}: {role or ''} @ {company or ''}".strip()
+            if loc:
+                part += f" — {loc}"
+            if desc:
+                part += f" | {desc}"
+            lines.append(part)
 
-    # Dedup su LinkedIn normalizzato
-    seen = set(); dedup_rows = []
-    for r in all_rows:
-        norm = normalize_linkedin_url(r["LinkedIn"])
-        if norm not in seen:
-            seen.add(norm)
-            dedup_rows.append({"Nome": r["Nome"], "Cognome": r["Cognome"], "LinkedIn": norm})
-    return pd.DataFrame(dedup_rows, columns=["Nome", "Cognome", "LinkedIn"])
+    # unisci tutto in UNA riga (per CSV rimane una singola cella)
+    return " • ".join([l for l in lines if l])
+
+def extract_experience_blocks(item: dict) -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]]:
+    exps = item.get("experiences") or []
+    if not exps: return None, None, None, None, None, None
+
+    def _desc_list(sc_list):
+        texts = []
+        for sc in sc_list or []:
+            for d in sc.get("description") or []:
+                t = d.get("text"); 
+                if t: texts.append(t)
+        return texts
+
+    current_role = current_company = current_start = current_loc = current_dur = None
+    lines = []
+    for idx, exp in enumerate(exps):
+        breakdown = exp.get("breakdown")
+        if breakdown:
+            company = exp.get("title")
+            for j, sc in enumerate(exp.get("subComponents") or []):
+                role = sc.get("title")
+                caption = sc.get("caption") or ""
+                loc = sc.get("metadata") or exp.get("metadata") or ""
+                start_d, end_d, _ = parse_caption_dates(caption or exp.get("caption"))
+                when = caption or (exp.get("caption") or "")
+                desc = " ".join(_desc_list([sc])) or ""
+                line = f"{when}: {role} @ {company}" + (f" — {loc}" if loc else "")
+                if desc:
+                    line += f" | {desc}"
+                lines.append(line)
+                if idx == 0 and j == 0:
+                    current_role = role
+                    current_company = company
+                    current_start = start_d
+                    current_loc = loc or None
+                    current_dur = caption or exp.get("caption") or None
+        else:
+            role = exp.get("title")
+            company = exp.get("subtitle") or exp.get("title")
+            caption = exp.get("caption") or ""
+            loc = exp.get("metadata") or ""
+            desc = " ".join(_desc_list(exp.get("subComponents"))) or ""
+            line = f"{caption}: {role} @ {company}" + (f" — {loc}" if loc else "")
+            if desc:
+                line += f" | {desc}"
+            lines.append(line)
+            if idx == 0:
+                current_role = role
+                current_company = company
+                current_start, _, _ = parse_caption_dates(caption)
+                current_loc = loc or None
+                current_dur = caption or None
+    timeline_text = " • ".join([l for l in lines if l])
+    return current_role, current_company, current_start, current_loc, current_dur, timeline_text
+
+def extract_education_blocks(item: dict) -> Tuple[Optional[str], Optional[str]]:
+    edus = item.get("educations") or []
+    if not edus: return None, None
+
+    def _short_degree(subtitle: str) -> Tuple[Optional[str], Optional[str]]:
+        if not subtitle: return None, None
+        parts = [p.strip() for p in subtitle.split(",")]
+        degree = parts[0] if parts else None
+        field = parts[1] if len(parts) > 1 else None
+        return degree, field
+
+    lines = []
+    top = None
+    for i, ed in enumerate(edus):
+        school = ed.get("title")
+        degree, field = _short_degree(ed.get("subtitle") or "")
+        caption = ed.get("caption") or ""
+        notes = []
+        for sc in ed.get("subComponents") or []:
+            for d in sc.get("description") or []:
+                t = d.get("text")
+                if t: notes.append(t)
+        note = "; ".join(notes) if notes else None
+        line = f"{caption}: {degree or ''}{(' in ' + field) if field else ''} @ {school}"
+        if note:
+            line += f" | {note}"
+        lines.append(line.strip())
+        if i == 0:
+            short = f"{degree or ''}{(' in ' + field) if field else ''}".strip()
+            top = f"{school} — {short}" if short else school
+    education_text = " • ".join([l for l in lines if l])
+    return top, education_text
+
+def person_master_row(item: dict) -> dict:
+    current_role, current_company, current_start, current_loc, current_dur, exp_timeline = extract_experience_blocks(item)
+    edu_top, edu_text = extract_education_blocks(item)
+    return {
+        "fullName": item.get("fullName"),
+        "headline": item.get("headline"),
+        "location": item.get("addressWithCountry") or item.get("addressWithoutCountry") or item.get("addressCountryOnly"),
+        "current_role": current_role,
+        "current_company": current_company,
+        "current_start": current_start,
+        "current_location": current_loc,
+        "current_duration": current_dur,
+        "experiences_full": experiences_full_string(item),   # <<< NUOVA COLONNA CON TUTTE LE ESPERIENZE
+        "education_top": edu_top,
+        "education_text": edu_text,
+        "skills": summarize_skills(item, top_n=8),
+        "connections": item.get("connections"),
+        "followers": item.get("followers"),
+        "email": item.get("email"),
+        "mobileNumber": item.get("mobileNumber"),
+        "linkedinUrl": item.get("linkedinUrl"),
+        "companyLinkedin": item.get("companyLinkedin"),
+        "profilePicHighQuality": item.get("profilePicHighQuality"),
+    }
+
+def build_people_master(items: List[dict]) -> pd.DataFrame:
+    rows = [person_master_row(it) for it in items]
+    df = pd.DataFrame(rows)
+    col_order = [
+        "fullName","headline","location",
+        "current_role","current_company","current_start","current_location","current_duration",
+        "experiences_full",            # <<< qui
+        "education_top","education_text",
+        "skills","connections","followers","email","mobileNumber",
+        "linkedinUrl","companyLinkedin","profilePicHighQuality",
+    ]
+    for c in col_order:
+        if c not in df.columns: df[c] = None
+    return df[col_order]
 
 # ----------------------------
 # Sidebar
 # ----------------------------
+st.sidebar.image("logo.png", use_container_width=True)
 st.sidebar.header("🔐 Credenziali")
 APIFY_TOKEN = st.sidebar.text_input("APIFY_TOKEN", get_env("APIFY_TOKEN", ""), type="password")
-OPENAI_API_KEY = st.sidebar.text_input("OPENAI_API_KEY (per AI)", get_env("OPENAI_API_KEY", ""), type="password")
-
-st.sidebar.markdown("---")
-st.sidebar.header("⚙️ Impostazioni Actor")
-default_query = 'site:linkedin.com/in ("stealth mode" OR "stealth startup" OR "in stealth") (Italy OR Italia OR Milano OR Roma OR Torino OR Firenze OR Bologna)'
-query_text = st.sidebar.text_area("Query Google", value=default_query, height=100)
-country_code = st.sidebar.text_input("countryCode", value="it")
-max_pages = st.sidebar.number_input("maxPagesPerQuery (~10 risultati per pagina)", min_value=1, max_value=50, value=10, step=1)
-site_filter = st.sidebar.text_input("site", value="www.linkedin.com")
-ai_mode = st.sidebar.selectbox("aiMode", ["aiModeOff", "aiModeBrief", "aiModeFull"], index=0)
-save_html_to_kv = st.sidebar.checkbox("saveHtmlToKeyValueStore", value=True)
-include_icons = st.sidebar.checkbox("includeIcons", value=False)
-mobile_results = st.sidebar.checkbox("mobileResults", value=False)
-
-st.sidebar.markdown("---")
-st.sidebar.header("🧪 OpenAI (opzioni)")
-use_ai = st.sidebar.checkbox("Usa OpenAI (summary/estrazioni)", value=True)
-ai_model = st.sidebar.text_input("Modello OpenAI", value="gpt-4o-mini")
-batch_size = st.sidebar.number_input("Batch size (item/chiamata)", min_value=20, max_value=200, value=50, step=10)
-
-# ----------------------------
-# Header
-# ----------------------------
-st.title("🔎 Google SERP → JSON Viewer (Apify + OpenAI)")
-st.caption("Apify `apify/google-search-scraper` → Dataset → JSON → Tabella • Estrazione locale + AI (summary & parsing)")
 
 # ----------------------------
 # Tabs
 # ----------------------------
-tab_run, tab_upload = st.tabs(["▶️ Esegui scraper", "📤 Carica JSON esistente"])
+tab_scrape, tab_upload_json, tab_upload_csv = st.tabs([
+    "▶️ SERP → People",
+    "📤 Carica JSON SERP",
+    "📥 Carica CSV People"
+])
 
-# Stato condiviso
-if "items" not in st.session_state:
-    st.session_state["items"] = []
-if "df" not in st.session_state:
-    st.session_state["df"] = pd.DataFrame()
-if "urls_ai" not in st.session_state:
-    st.session_state["urls_ai"] = []
-if "summary_ai" not in st.session_state:
-    st.session_state["summary_ai"] = ""
-if "people_df_local" not in st.session_state:
-    st.session_state["people_df_local"] = pd.DataFrame(columns=["Nome", "Cognome", "LinkedIn"])
-if "people_df_ai" not in st.session_state:
-    st.session_state["people_df_ai"] = pd.DataFrame(columns=["Nome", "Cognome", "LinkedIn"])
+# ===== TAB 1: SERP
+with tab_scrape:
+    st.image("logo2.png")
+    # Opzioni predefinite per i ruoli/parole chiave
+    keywords = ["stealth", "founder", "co-founder", "investor", "CEO", "CTO"]
 
-# ----------------------------
-# TAB 1: Esegui scraper
-# ----------------------------
-with tab_run:
-    st.subheader("1) Avvio Actor Apify")
-    st.write("**Nota**: Google ora mostra ~10 risultati organici per pagina; `resultsPerPage` è ignorato → usa `maxPagesPerQuery`.")
-    colA, colB = st.columns([1, 2])
+    selected_keywords = st.sidebar.multiselect(
+        "📌 Parole chiave da includere",
+        options=keywords,
+        default=["stealth", "founder", "co-founder"],
+        help="Seleziona i termini da cercare nel profilo"
+    )
 
-    with colA:
-        start_btn = st.button("🚀 Avvia scraping e scarica dataset")
+    # Country code con selectbox
+    country_code = st.sidebar.selectbox(
+        "🌍 Seleziona Paese",
+        options=["it", "fr", "de", "es", "uk", "us"],
+        index=0
+    )
 
-    with colB:
-        st.json({
-            "aiMode": ai_mode,
-            "countryCode": country_code,
-            "focusOnPaidAds": False,
-            "forceExactMatch": False,
-            "includeIcons": include_icons,
-            "includeUnfilteredResults": False,
-            "maxPagesPerQuery": int(max_pages),
-            "maximumLeadsEnrichmentRecords": 0,
-            "mobileResults": mobile_results,
-            "queries": query_text,
-            "resultsPerPage": 100,  # Ignorato da Google
-            "saveHtml": False,
-            "saveHtmlToKeyValueStore": save_html_to_kv,
-            "site": site_filter,
-        })
+    # Site filter
+    site_filter = st.sidebar.radio(
+        "🌐 Filtra dominio",
+        options=["www.linkedin.com", "linkedin.com", "it.linkedin.com"],
+        index=0
+    )
 
-    if start_btn:
+    # Slider per max pages
+    max_pages = st.sidebar.slider(
+        "📄 Numero massimo di pagine (10 risultati/pagina)",
+        min_value=1,
+        max_value=50,
+        value=10,
+        step=1
+    )
+
+    # Costruzione query dinamica
+    if selected_keywords:
+        keywords_query = " OR ".join([f'"{kw}"' for kw in selected_keywords])
+    else:
+        keywords_query = ""
+
+    query_text = f'site:{site_filter}/in ({keywords_query}) {country_code.upper()}'
+
+    st.sidebar.markdown("---")
+    st.sidebar.write("⚙️ Parametri pronti per la ricerca:")
+    st.sidebar.code(query_text, language="bash")
+
+    if st.button("🚀 Avvia scraping SERP"):
         if not APIFY_TOKEN:
             st.error("Imposta APIFY_TOKEN nella sidebar.")
         else:
-            with st.spinner("Esecuzione actor su Apify..."):
-                apify = ApifyClient(APIFY_TOKEN)
-                run_input = {
-                    "aiMode": ai_mode,
-                    "countryCode": country_code,
-                    "focusOnPaidAds": False,
-                    "forceExactMatch": False,
-                    "includeIcons": include_icons,
-                    "includeUnfilteredResults": False,
-                    "maxPagesPerQuery": int(max_pages),
-                    "maximumLeadsEnrichmentRecords": 0,
-                    "mobileResults": mobile_results,
-                    "queries": query_text,
-                    "resultsPerPage": 100,  # Ignorato
-                    "saveHtml": False,
-                    "saveHtmlToKeyValueStore": save_html_to_kv,
-                    "site": site_filter,
-                }
-
-                run = apify.actor("apify/google-search-scraper").call(run_input=run_input)
-                dataset_id = run["defaultDatasetId"]
-
-                items = download_dataset_items(apify, dataset_id)
-                st.session_state["items"] = items
-                st.session_state["df"] = items_to_dataframe(items)
-
-                out_path = "google_serp_results.json"
-                save_json(items, out_path)
-                st.success(f"Scaricate {len(items)} pagine SERP. Salvate in `{out_path}`.")
-
-                st.download_button(
-                    label="⬇️ Scarica JSON",
-                    data=json.dumps(items, ensure_ascii=False, indent=2),
-                    file_name="google_serp_results.json",
-                    mime="application/json",
-                )
-
-    if len(st.session_state["items"]) > 0:
-        st.markdown("---")
-        st.subheader("📋 People (Locale) — Nome, Cognome, Title, Snippet, Location, Followers, LINK")
-
-        df_people_table = build_people_table(st.session_state["items"])
-
-        if df_people_table.empty:
-            st.info("Nessun profilo LinkedIn rilevato negli organicResults.")
-        else:
-            # Mostra tabella con link cliccabile
-            st.dataframe(
-                df_people_table,
-                use_container_width=True,
-                height=500,
-                column_config={
-                    "LinkedIn": st.column_config.LinkColumn(
-                        "LINK",
-                        help="Apri il profilo su LinkedIn",
-                        display_text="Apri profilo"
-                    )
-                },
-                hide_index=True,
-            )
-
-            # Download CSV della tabella people
+            apify = ApifyClient(APIFY_TOKEN)
+            run = apify.actor("apify/google-search-scraper").call(run_input={
+                "queries": query_text,
+                "countryCode": country_code,
+                "maxPagesPerQuery": int(max_pages),
+                "site": site_filter,
+            })
+            dataset_id = run["defaultDatasetId"]
+            items = download_dataset_items(apify, dataset_id)
+            st.session_state["serp_items"] = items
+            st.success(f"Scaricate {len(items)} pagine SERP.")
             st.download_button(
-                label="⬇️ Scarica CSV (People)",
-                data=df_people_table.to_csv(index=False).encode("utf-8"),
-                file_name="people_table.csv",
-                mime="text/csv",
+                "⬇️ Scarica JSON SERP",
+                json.dumps(items, ensure_ascii=False, indent=2),
+                "google_serp_results.json",
+                "application/json",
+                key="dl_json_serp_scrape"
             )
 
-
-# ----------------------------
-# TAB 2: Carica JSON esistente
-# ----------------------------
-with tab_upload:
-    st.subheader("Carica un file JSON già scaricato")
-    up = st.file_uploader("Seleziona `google_serp_results.json`", type=["json"])
-    if up is not None:
-        try:
-            items = json.load(up)
-            if not isinstance(items, list):
-                st.error("Il JSON deve essere una lista (array).")
-            else:
-                st.session_state["items"] = items
-                st.session_state["df"] = items_to_dataframe(items)
-                st.success(f"Caricate {len(items)} pagine SERP dal file.")
-        except Exception as e:
-            st.error(f"Errore nel parsing JSON: {e}")
-
-    if len(st.session_state["items"]) > 0:
-        st.dataframe(st.session_state["df"], use_container_width=True, height=500)
+    if st.session_state.get("serp_items"):
+        df_people = build_people_table(st.session_state["serp_items"])
+        st.subheader("📋 People (Locale) dalla SERP")
+        st.dataframe(df_people, use_container_width=True, height=360,
+                     column_config={"LinkedIn": st.column_config.LinkColumn("LINK", display_text="Apri profilo")})
         st.download_button(
-            label="⬇️ Riscaria JSON (normalizzato)",
-            data=json.dumps(st.session_state["items"], ensure_ascii=False, indent=2),
-            file_name="google_serp_results.json",
-            mime="application/json",
+            "⬇️ Scarica CSV (People)",
+            df_people.to_csv(index=False).encode("utf-8"),
+            "people_table.csv",
+            "text/csv",
+            key="dl_people_scrape"
         )
 
-# ----------------------------
-# Sezione Estrazioni & AI
-# ----------------------------
-if len(st.session_state["items"]) > 0:
-    st.markdown("---")
-    st.header("🔧 Estrazioni & 🤖 AI")
-
-    colL, colR = st.columns(2)
-
-    # ------- Lato sinistro: locale ------
-    with colL:
-        st.subheader("📊 ANALIZZA JSON (Locale)")
-        st.caption("Parsing locale del JSON per Nome / Cognome / LinkedIn (senza AI)")
-
-        if st.button("📊 Esegui analisi locale"):
-            df_local = extract_people_from_serp(st.session_state["items"])
-            st.session_state["people_df_local"] = df_local
-            st.success(f"Estratti (locale) {len(df_local)} profili.")
-
-        if not st.session_state["people_df_local"].empty:
-            st.dataframe(st.session_state["people_df_local"], use_container_width=True, height=350)
-            csv_bytes = st.session_state["people_df_local"].to_csv(index=False).encode("utf-8")
-            st.download_button("⬇️ Scarica CSV (Locale)", csv_bytes, "people_linkedin_local.csv", "text/csv")
-
-    # ------- Lato destro: AI ------
-    with colR:
-        st.subheader("🤖 ANALIZZA JSON (AI)")
-        st.caption("Prompt: **leggi il file json e dammi Nome cognome link linkedin** + Executive Summary")
-
-        if use_ai and OPENAI_API_KEY:
-            client_oa = OpenAI(api_key=OPENAI_API_KEY)
-
-            c1, c2 = st.columns(2)
-            with c1:
-                run_ai_summary = st.button("🧠 Executive summary + URL (AI)")
-            with c2:
-                run_ai_people = st.button("📊 Estrai Nome/Cognome/LinkedIn (AI)")
-
-            if run_ai_summary:
-                try:
-                    with st.spinner("AI: creo executive summary e raccolgo URL..."):
-                        urls_ai, summary_ai = run_openai_batch_read(
-                            client_oa=client_oa,
-                            items=st.session_state["df"].to_dict("records"),  # usa il DF appiattito per token-efficienza
-                            model=ai_model,
-                            batch_size=int(batch_size),
-                        )
-                        st.session_state["urls_ai"] = urls_ai
-                        st.session_state["summary_ai"] = summary_ai
-                    st.success(f"AI OK. URL LinkedIn deduplicate: {len(urls_ai)}")
-                except Exception as e:
-                    st.error(f"Errore AI (summary/urls): {e}")
-
-            if run_ai_people:
-                try:
-                    with st.spinner("AI: estraggo Nome/Cognome/LinkedIn..."):
-                        df_people_ai = analyze_json_people_ai(
-                            client_oa=client_oa,
-                            items=st.session_state["df"].to_dict("records"),
-                            model=ai_model,
-                            batch_size=int(batch_size),
-                        )
-                        st.session_state["people_df_ai"] = df_people_ai
-                    st.success(f"AI OK. Profili estratti: {len(st.session_state['people_df_ai'])}")
-                except Exception as e:
-                    st.error(f"Errore AI (people): {e}")
-
-            # risultati AI
-            if st.session_state["urls_ai"]:
-                st.subheader("🔗 URL LinkedIn (AI)")
-                st.dataframe(pd.DataFrame({"url": st.session_state["urls_ai"]}), use_container_width=True, height=250)
+        if st.button("🚀 PRENDI INFO SULLE PERSONE (Enrichment)"):
+            if not APIFY_TOKEN:
+                st.error("Imposta APIFY_TOKEN.")
+            else:
+                apify = ApifyClient(APIFY_TOKEN)
+                urls = df_people["LinkedIn"].dropna().map(normalize_linkedin_url).drop_duplicates().tolist()
+                with st.spinner(f"Enrichment di {len(urls)} profili…"):
+                    enriched = run_linkedin_enrichment(apify, urls)
+                st.session_state["enriched_items"] = enriched
+                df_master = build_people_master(enriched)
+                st.session_state["people_master"] = df_master
+                st.success(f"Creato People Master con {len(df_master)} righe.")
                 st.download_button(
-                    "⬇️ Scarica URL LinkedIn (AI .txt)",
-                    "\n".join(st.session_state["urls_ai"]),
-                    "linkedin_urls_ai.txt",
-                    "text/plain",
+                    "⬇️ Scarica CSV (People Master)",
+                    df_master.to_csv(index=False).encode("utf-8"),
+                    "people_master.csv",
+                    "text/csv",
+                    key="dl_master_from_scrape"
                 )
 
-            if st.session_state["summary_ai"]:
-                st.subheader("📝 Executive summary (AI)")
-                st.write(st.session_state["summary_ai"])
+# ===== TAB 2: Upload JSON SERP
+with tab_upload_json:
+    st.header("Carica JSON SERP già scaricato")
+    file = st.file_uploader("Carica file JSON della SERP", type=["json"])
+    if file:
+        try:
+            items = json.load(file)
+            st.session_state["serp_items"] = items
+            st.success(f"Caricate {len(items)} pagine SERP dal file.")
+        except Exception as e:
+            st.error(f"Errore: {e}")
 
-            if not st.session_state["people_df_ai"].empty:
-                st.subheader("📋 People (AI) — Nome / Cognome / LinkedIn")
-                st.dataframe(st.session_state["people_df_ai"], use_container_width=True, height=350)
-                csv_ai = st.session_state["people_df_ai"].to_csv(index=False).encode("utf-8")
-                st.download_button("⬇️ Scarica CSV (AI)", csv_ai, "people_linkedin_ai.csv", "text/csv")
+    if st.session_state.get("serp_items"):
+        df_people = build_people_table(st.session_state["serp_items"])
+        st.subheader("📋 People (Locale) dal file caricato")
+        st.dataframe(df_people, use_container_width=True, height=360,
+                     column_config={"LinkedIn": st.column_config.LinkColumn("LINK", display_text="Apri profilo")})
+        st.download_button(
+            "⬇️ Scarica CSV (People)",
+            df_people.to_csv(index=False).encode("utf-8"),
+            "people_table.csv",
+            "text/csv",
+            key="dl_people_upload_json"
+        )
 
-        else:
-            st.warning("Per usare l’AI attiva la spunta 'Usa OpenAI' e imposta OPENAI_API_KEY nella sidebar.")
+        if st.button("🚀 PRENDI INFO SULLE PERSONE (Enrichment)", key="btn_enrich_upload_json"):
+            if not APIFY_TOKEN:
+                st.error("Imposta APIFY_TOKEN.")
+            else:
+                apify = ApifyClient(APIFY_TOKEN)
+                urls = df_people["LinkedIn"].dropna().map(normalize_linkedin_url).drop_duplicates().tolist()
+                with st.spinner(f"Enrichment di {len(urls)} profili…"):
+                    enriched = run_linkedin_enrichment(apify, urls)
+                st.session_state["enriched_items"] = enriched
+                df_master = build_people_master(enriched)
+                st.session_state["people_master"] = df_master
+                st.success(f"Creato People Master con {len(df_master)} righe.")
+                st.download_button(
+                    "⬇️ Scarica CSV (People Master)",
+                    df_master.to_csv(index=False).encode("utf-8"),
+                    "people_master.csv",
+                    "text/csv",
+                    key="dl_master_from_upload_json"
+                )
 
-# ----------------------------
-# Footer
-# ----------------------------
-st.markdown("---")
-st.caption(
-    "Suggerimenti: aumenta `maxPagesPerQuery` per più risultati (~10 per pagina). "
-    "`resultsPerPage` è ignorato da Google; lasciato per compatibilità."
-)
+# ===== TAB 3: Upload CSV People (con colonna LinkedIn/linkedinUrl)
+with tab_upload_csv:
+    st.header("Carica CSV People (colonna LinkedIn o linkedinUrl)")
+    csvf = st.file_uploader("Carica CSV", type=["csv"])
+    if csvf:
+        try:
+            df_csv = pd.read_csv(csvf)
+            link_col = None
+            for c in df_csv.columns:
+                if c.lower() in ("linkedin","linkedinurl","link","url"):
+                    link_col = c; break
+            if not link_col:
+                for c in df_csv.columns:
+                    if df_csv[c].astype(str).str.contains("linkedin.com/in", na=False).any():
+                        link_col = c; break
+            if not link_col:
+                st.error("Non trovo una colonna con i link LinkedIn (es: LinkedIn, linkedinUrl).")
+            else:
+                urls = (df_csv[link_col].astype(str)
+                        .map(normalize_linkedin_url)
+                        .dropna()
+                        .drop_duplicates()
+                        .tolist())
+                st.write(f"Trovati {len(urls)} URL unici.")
+                if st.button("🚀 Enrich da CSV", key="btn_enrich_csv"):
+                    if not APIFY_TOKEN:
+                        st.error("Imposta APIFY_TOKEN.")
+                    else:
+                        apify = ApifyClient(APIFY_TOKEN)
+                        with st.spinner(f"Enrichment di {len(urls)} profili…"):
+                            enriched = run_linkedin_enrichment(apify, urls)
+                        st.session_state["enriched_items"] = enriched
+                        df_master = build_people_master(enriched)
+                        st.session_state["people_master"] = df_master
+                        st.success(f"Creato People Master con {len(df_master)} righe (da CSV).")
+                        st.download_button(
+                            "⬇️ Scarica CSV (People Master)",
+                            df_master.to_csv(index=False).encode("utf-8"),
+                            "people_master.csv",
+                            "text/csv",
+                            key="dl_master_from_csv"
+                        )
+        except Exception as e:
+            st.error(f"Errore CSV: {e}")
+
+# ===== Output finale (se già presente)
+if st.session_state.get("people_master") is not None:
+    st.markdown("---")
+    st.header("👤 People Master (una riga per persona)")
+    df_master = st.session_state["people_master"]
+    st.dataframe(
+        df_master,
+        use_container_width=True,
+        height=560,
+        column_config={
+            "linkedinUrl": st.column_config.LinkColumn("LinkedIn", display_text="Apri profilo"),
+            "companyLinkedin": st.column_config.LinkColumn("Company LI", display_text="Azienda"),
+            "profilePicHighQuality": st.column_config.LinkColumn("Foto", display_text="Apri foto HQ"),
+        }
+    )
+    st.download_button(
+        "⬇️ Scarica CSV (People Master)",
+        df_master.to_csv(index=False).encode("utf-8"),
+        "people_master.csv",
+        "text/csv",
+        key="dl_master_bottom"
+    )
+
+st.caption("Nota: l’uso di scraper/attori su LinkedIn è soggetto ai loro Termini di Servizio.")
