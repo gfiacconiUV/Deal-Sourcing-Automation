@@ -473,7 +473,7 @@ with tab_scrape:
     selected_keywords = st.sidebar.multiselect(
         "📌 Parole chiave da includere",
         options=keywords,
-        default=["stealth", "founder", "co-founder"],
+        default=["stealth","stealth mode", "founder", "co-founder"],
         help="Seleziona i termini da cercare nel profilo"
     )
 
