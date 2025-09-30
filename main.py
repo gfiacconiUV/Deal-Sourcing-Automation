@@ -14,7 +14,7 @@ from apify_client import ApifyClient
 from openai import OpenAI
 import altair as alt
 
-st.set_page_config(page_title="UV Deal Sourcing Tool)", layout="wide")
+st.set_page_config(page_title="UV Deal Sourcing Tool", layout="wide")
 
 # ----------------------------
 # Utils
