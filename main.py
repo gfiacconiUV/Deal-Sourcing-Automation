@@ -485,7 +485,7 @@ with tab_scrape:
 
     site_filter = st.sidebar.radio(
         "🌐 Filtra dominio",
-        options=[ "it.linkedin.com", "linkedin.com","www.linkedin.com"]
+        options=[ "it.linkedin.com", "linkedin.com","www.linkedin.com"],
         index=0
     )
 
