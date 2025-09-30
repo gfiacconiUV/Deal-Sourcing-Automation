@@ -468,7 +468,7 @@ tab_scrape, tab_upload_json, tab_upload_csv = st.tabs([
 # ===== TAB 1: SERP
 with tab_scrape:
     #st.image("logo2.png",  width='stretch')
-    keywords = ["stealth", "founder", "co-founder", "investor", "CEO", "CTO"]
+    keywords = ["stealth", "stealth mode", "founder", "co-founder", "investor", "CEO", "CTO"]
 
     selected_keywords = st.sidebar.multiselect(
         "📌 Parole chiave da includere",
