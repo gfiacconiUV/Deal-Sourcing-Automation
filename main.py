@@ -716,4 +716,3 @@ if st.session_state.get("people_master") is not None:
             else:
                 st.error("Risposta del modello non valida per il plotting.")
                 
-st.caption("Nota: l’uso di scraper/attori su LinkedIn è soggetto ai loro Termini di Servizio.")
