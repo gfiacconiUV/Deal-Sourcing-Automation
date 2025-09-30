@@ -508,7 +508,7 @@ with tab_scrape:
     st.sidebar.write("⚙️ Parametri pronti per la ricerca:")
     st.sidebar.code(query_text, language="bash")
 
-    if st.button("🚀 Avvia scraping SERP"):
+    if st.button("🚀 Avvia scraping"):
         if not APIFY_TOKEN:
             st.error("Imposta APIFY_TOKEN nella sidebar.")
         else:
