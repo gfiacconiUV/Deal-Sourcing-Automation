@@ -1,7 +1,8 @@
 # streamlit run app.py
 # Requisiti:
-#   pip install streamlit apify-client pandas python-dotenv
-# ENV: APIFY_TOKEN
+#   pip install streamlit apify-client pandas python-dotenv openai
+# ENV: APIFY_TOKEN (per scraping/enrichment)
+#      OPENAI_API_KEY (per il conteggio università via AI)
 
 import os, json, re
 from urllib.parse import urlparse
@@ -10,6 +11,8 @@ from typing import List, Dict, Any, Tuple, Optional
 import pandas as pd
 import streamlit as st
 from apify_client import ApifyClient
+from openai import OpenAI
+import altair as alt
 
 st.set_page_config(page_title="SERP → People Master (LinkedIn Enrichment)", layout="wide")
 
@@ -21,6 +24,7 @@ def get_env(name: str, default: str = "") -> str:
 
 def normalize_linkedin_url(u: str) -> str:
     try:
+        from urllib.parse import urlparse
         p = urlparse(u)
         scheme = "https"
         host = (p.hostname or "").lower()
@@ -168,7 +172,6 @@ def guess_employment_type(text: Optional[str]) -> Optional[str]:
 
 def fmt_ymd(ymd: Optional[str]) -> Optional[str]:
     if not ymd: return None
-    # expect YYYY-MM-01 -> YYYY-MM
     m = re.match(r"(\d{4})-(\d{2})-\d{2}", ymd)
     if m:
         return f"{m.group(1)}-{m.group(2)}"
@@ -200,10 +203,6 @@ def summarize_skills(item: dict, top_n: int = 8) -> Optional[str]:
     return item.get("topSkillsByEndorsements")
 
 def experiences_full_string(item: dict) -> Optional[str]:
-    """
-    Una stringa unica con TUTTE le esperienze, leggibile.
-    Formato: 'YYYY-MM → YYYY-MM/Present: Role @ Company — Location | descrizione' concatenate con ' • '
-    """
     exps = item.get("experiences") or []
     if not exps:
         return None
@@ -217,7 +216,6 @@ def experiences_full_string(item: dict) -> Optional[str]:
                     texts.append(t.strip())
         if not texts:
             return None
-        # prendi solo la prima frase breve per compattezza
         first = texts[0].split("\n")[0]
         return first[:300]
 
@@ -259,7 +257,6 @@ def experiences_full_string(item: dict) -> Optional[str]:
                 part += f" | {desc}"
             lines.append(part)
 
-    # unisci tutto in UNA riga (per CSV rimane una singola cella)
     return " • ".join([l for l in lines if l])
 
 def extract_experience_blocks(item: dict) -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]]:
@@ -361,7 +358,7 @@ def person_master_row(item: dict) -> dict:
         "current_start": current_start,
         "current_location": current_loc,
         "current_duration": current_dur,
-        "experiences_full": experiences_full_string(item),   # <<< NUOVA COLONNA CON TUTTE LE ESPERIENZE
+        "experiences_full": experiences_full_string(item),
         "education_top": edu_top,
         "education_text": edu_text,
         "skills": summarize_skills(item, top_n=8),
@@ -380,7 +377,7 @@ def build_people_master(items: List[dict]) -> pd.DataFrame:
     col_order = [
         "fullName","headline","location",
         "current_role","current_company","current_start","current_location","current_duration",
-        "experiences_full",            # <<< qui
+        "experiences_full",
         "education_top","education_text",
         "skills","connections","followers","email","mobileNumber",
         "linkedinUrl","companyLinkedin","profilePicHighQuality",
@@ -390,11 +387,74 @@ def build_people_master(items: List[dict]) -> pd.DataFrame:
     return df[col_order]
 
 # ----------------------------
+# OpenAI helper (conteggi università)
+# ----------------------------
+def _safe_json_extract(s: str) -> dict:
+    try:
+        return json.loads(s)
+    except Exception:
+        pass
+    m = re.search(r"\{.*\}", s, re.DOTALL)
+    if m:
+        try:
+            return json.loads(m.group(0))
+        except Exception:
+            return {"error": "JSON non valido", "raw": s[:1000]}
+    return {"error": "Nessun JSON trovato", "raw": s[:500]}
+
+def count_universities_with_openai(df: pd.DataFrame, api_key: str, model: str = "gpt-4o-mini") -> dict:
+    if "education_top" not in df.columns:
+        return {"error": "Colonna 'education_top' assente nel DataFrame"}
+
+    values = df["education_top"].dropna().astype(str).tolist()
+    if not values:
+        return {"error": "Nessun valore in 'education_top'"}
+
+    MAX_ROWS = 2000
+    rows = values[:MAX_ROWS]
+
+    client = OpenAI(api_key=api_key)
+
+    system_msg = (
+        "Sei un data analyst. Riceverai una lista di righe dalla colonna 'education_top'. "
+        "Normalizza i nomi delle università (es. 'Harvard', 'Harvard Univ.' -> 'Harvard University') e conta le occorrenze. "
+        "Ignora degree/field e voci non-accademiche. "
+        "Rispondi SOLO con JSON valido:\n"
+        "{\n"
+        '  "universities": {"<Nome Università Normalizzato>": <conteggio>, ...},\n'
+        '  "total_rows": <numero_righe_processate>,\n'
+        '  "unique_universities": <numero_università_distinte>\n'
+        "}"
+    )
+    user_msg = "Righe:\n" + "\n".join(f"- {r}" for r in rows)
+
+    resp = client.chat.completions.create(
+        model=model,
+        temperature=0,
+        messages=[
+            {"role": "system", "content": system_msg},
+            {"role": "user", "content": user_msg},
+        ],
+    )
+
+    content = resp.choices[0].message.content if resp and resp.choices else ""
+    data = _safe_json_extract(content)
+    if isinstance(data, dict):
+        data.setdefault("total_rows", len(rows))
+        if "universities" in data and isinstance(data["universities"], dict):
+            data.setdefault("unique_universities", len(data["universities"]))
+    return data
+
+# ----------------------------
 # Sidebar
 # ----------------------------
-st.sidebar.image("logo.png", use_container_width=True)
+st.sidebar.image("logo2.png", width='stretch')
 st.sidebar.header("🔐 Credenziali")
 APIFY_TOKEN = st.sidebar.text_input("APIFY_TOKEN", get_env("APIFY_TOKEN", ""), type="password")
+
+st.sidebar.header("🧠 OpenAI")
+OPENAI_API_KEY = st.sidebar.text_input("OPENAI_API_KEY", get_env("OPENAI_API_KEY", ""), type="password")
+OPENAI_MODEL = st.sidebar.text_input("MODEL", get_env("OPENAI_MODEL", "gpt-4o-mini"))
 
 # ----------------------------
 # Tabs
@@ -407,8 +467,7 @@ tab_scrape, tab_upload_json, tab_upload_csv = st.tabs([
 
 # ===== TAB 1: SERP
 with tab_scrape:
-    st.image("logo2.png")
-    # Opzioni predefinite per i ruoli/parole chiave
+    #st.image("logo2.png",  width='stretch')
     keywords = ["stealth", "founder", "co-founder", "investor", "CEO", "CTO"]
 
     selected_keywords = st.sidebar.multiselect(
@@ -418,21 +477,18 @@ with tab_scrape:
         help="Seleziona i termini da cercare nel profilo"
     )
 
-    # Country code con selectbox
     country_code = st.sidebar.selectbox(
         "🌍 Seleziona Paese",
         options=["it", "fr", "de", "es", "uk", "us"],
         index=0
     )
 
-    # Site filter
     site_filter = st.sidebar.radio(
         "🌐 Filtra dominio",
         options=["www.linkedin.com", "linkedin.com", "it.linkedin.com"],
         index=0
     )
 
-    # Slider per max pages
     max_pages = st.sidebar.slider(
         "📄 Numero massimo di pagine (10 risultati/pagina)",
         min_value=1,
@@ -441,7 +497,6 @@ with tab_scrape:
         step=1
     )
 
-    # Costruzione query dinamica
     if selected_keywords:
         keywords_query = " OR ".join([f'"{kw}"' for kw in selected_keywords])
     else:
@@ -479,7 +534,7 @@ with tab_scrape:
     if st.session_state.get("serp_items"):
         df_people = build_people_table(st.session_state["serp_items"])
         st.subheader("📋 People (Locale) dalla SERP")
-        st.dataframe(df_people, use_container_width=True, height=360,
+        st.dataframe(df_people, width='stretch', height=360,
                      column_config={"LinkedIn": st.column_config.LinkColumn("LINK", display_text="Apri profilo")})
         st.download_button(
             "⬇️ Scarica CSV (People)",
@@ -524,7 +579,7 @@ with tab_upload_json:
     if st.session_state.get("serp_items"):
         df_people = build_people_table(st.session_state["serp_items"])
         st.subheader("📋 People (Locale) dal file caricato")
-        st.dataframe(df_people, use_container_width=True, height=360,
+        st.dataframe(df_people, width='stretch', height=360,
                      column_config={"LinkedIn": st.column_config.LinkColumn("LINK", display_text="Apri profilo")})
         st.download_button(
             "⬇️ Scarica CSV (People)",
@@ -606,7 +661,7 @@ if st.session_state.get("people_master") is not None:
     df_master = st.session_state["people_master"]
     st.dataframe(
         df_master,
-        use_container_width=True,
+        width='stretch',
         height=560,
         column_config={
             "linkedinUrl": st.column_config.LinkColumn("LinkedIn", display_text="Apri profilo"),
@@ -622,4 +677,43 @@ if st.session_state.get("people_master") is not None:
         key="dl_master_bottom"
     )
 
+    # ===== Sezione: Conteggio Università con OpenAI (JSON + Plot) =====
+    st.markdown("## 🎓 Conteggio università con OpenAI (JSON + Plot)")
+    if not OPENAI_API_KEY:
+        st.warning("Imposta OPENAI_API_KEY nella sidebar per usare l'AI.")
+    else:
+        top_n = st.slider("Top N università da mostrare nel grafico", 5, 50, 15, step=1)
+        if st.button("🧠 Conta università (OpenAI)"):
+            with st.spinner("Invio dati 'education_top' a OpenAI…"):
+                result = count_universities_with_openai(df_master, OPENAI_API_KEY, model=OPENAI_MODEL)
+
+            # 1) Stampa SEMPRE il JSON grezzo
+            st.subheader("JSON")
+            st.json(result, expanded=True)
+
+            # 2) Plot (se il JSON è valido)
+            if isinstance(result, dict) and isinstance(result.get("universities"), dict):
+                uni_dict = result["universities"]
+                if len(uni_dict) == 0:
+                    st.info("Nessuna università riconosciuta dal modello.")
+                else:
+                    df_plot = (
+                        pd.DataFrame(list(uni_dict.items()), columns=["university", "count"])
+                        .sort_values("count", ascending=False)
+                        .head(top_n)
+                    )
+                    st.subheader("Bar chart (Top N)")
+                    chart = (
+                        alt.Chart(df_plot)
+                        .mark_bar()
+                        .encode(
+                            x=alt.X("count:Q", title="Conteggi"),
+                            y=alt.Y("university:N", sort='-x', title="Università"),
+                            tooltip=["university", "count"]
+                        )
+                    )
+                    st.altair_chart(chart, theme=None)
+            else:
+                st.error("Risposta del modello non valida per il plotting.")
+                
 st.caption("Nota: l’uso di scraper/attori su LinkedIn è soggetto ai loro Termini di Servizio.")
